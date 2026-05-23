@@ -2,12 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="2_0e48y"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://bqawwaww8hdv5" path="res://input_comp.gd" id="3_epypp"]
 =======
 [ext_resource type="Script" uid="uid://dll2nqqutk727" path="res://script/direction_comp.gd" id="3_epypp"]
 [ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="4_0hol4"]
 >>>>>>> Stashed changes
+=======
+[ext_resource type="Script" uid="uid://dll2nqqutk727" path="res://script/direction_comp.gd" id="3_epypp"]
+>>>>>>> parent of c5a5ae6 (prog2)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_epypp"]
 radius = 59.3043
@@ -24,13 +28,11 @@ shape = SubResource("CircleShape2D_epypp")
 [node name="sprite" type="Sprite2D" parent="player"]
 texture = ExtResource("1_wtcfe")
 
-[node name="movement_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body", "dir_comp")]
+[node name="movement_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body")]
 script = ExtResource("2_0e48y")
-speed = 1000.0
 body = NodePath("..")
-dir_comp = NodePath("../input_comp")
 
-[node name="input_comp" type="Node2D" parent="player"]
+[node name="direction_comp" type="Node2D" parent="player"]
 script = ExtResource("3_epypp")
 
 [node name="health_comp" type="Node2D" parent="player"]
