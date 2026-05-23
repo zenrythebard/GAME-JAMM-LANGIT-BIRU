@@ -1,11 +1,7 @@
 extends AnimatedSprite2D
 @export var state_comp : StateComp
-var dash_played : bool = false
 
 func _physics_process(delta: float) -> void:
-	print(state_comp.state)
-	if state_comp.state != "dashing":
-		dash_played = false
 	if state_comp.state.contains("moving"):
 		play("walk")
 		match state_comp.state:
@@ -13,11 +9,8 @@ func _physics_process(delta: float) -> void:
 				flip_h = false
 			"moving_left":
 				flip_h = true
-	if state_comp.state == "idle":
-		play("idle")
 	if state_comp.state == "attacking":
 		play("attack")
-	if state_comp.state == "dashing" and dash_played == false:
-		dash_played = true
+	if state_comp.state == "dashing":
 		play("dash")
 		

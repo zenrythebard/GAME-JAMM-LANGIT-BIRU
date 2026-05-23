@@ -1,6 +1,7 @@
 class_name InputComp extends DirectionComp
 @export var attack_comp: AttackComp  
 var button_pressed: bool = false
+@export var sprite: AnimatedSprite2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	direction.x = Input.get_axis("move_left","move_right")
@@ -8,17 +9,16 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized()
 	
 func _input(event: InputEvent) -> void:
-	if button_pressed:
-		return
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and attacking == false:
 		attacking = true
 		button_pressed = true
 		await get_tree().create_timer(attack_comp.attack_speed).timeout
 		attacking = false
 		button_pressed = false
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and dashing == false:
+		var dash_frames : float = sprite.sprite_frames.get_frame_count("dash")
+		var dash_dur : float = sprite.sprite_frames.get_animation_speed("dash")
+		var dash_time : float = dash_frames / dash_dur
 		dashing = true
-		button_pressed = true
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(dash_time).timeout
 		dashing = false
-		button_pressed = false

@@ -5,12 +5,18 @@ class_name MovementComp extends Node2D
 @export var body: CharacterBody2D
 var direction: Vector2
 @export var dir_comp: DirectionComp
+@export var state_comp: StateComp  
+var base_speed : float
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	speed = body.speed
+	base_speed = speed
 	dash_speed = body.dash_speed
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	
+	print(speed)
 	direction = dir_comp.direction
 	if direction:
 		body.velocity = direction * speed
@@ -18,10 +24,17 @@ func _physics_process(delta: float) -> void:
 		body.move_and_slide()
 	else:
 		body.velocity = body.velocity.move_toward(Vector2.ZERO,speed)
-		
-	if dir_comp.dashing:
-		var tween = get_tree().create_tween()
+	if dir_comp.dashing and state_comp.state != "dashing":
+		state_comp.state = "dashing"
 		speed += dash_speed
-		tween.tween_property(self, "speed", body.speed, 0.5)
-		await tween.finished
+		await get_tree().create_timer(0.2).timeout
+		state_comp.state = ""
+		correct_speed()
+		
+		
+func correct_speed():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "speed", body.speed, 0.2)
+	
+	
 		

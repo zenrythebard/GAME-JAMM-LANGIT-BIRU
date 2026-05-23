@@ -283,6 +283,8 @@ body = NodePath("../player")
 
 [node name="player" parent="." instance=ExtResource("3_0hol4")]
 unique_name_in_owner = true
+speed = 100.0
+dash_speed = 400.0
 
 [node name="enemy_basic" parent="." node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
 position = Vector2(487, 185)

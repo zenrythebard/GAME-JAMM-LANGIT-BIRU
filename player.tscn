@@ -127,7 +127,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -202,13 +202,14 @@ radius = 35.128338
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_n7ghd")
 health = 10.0
-speed = 500.0
+speed = 100.0
 damage = 1.0
+dash_speed = 200.0
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp")]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_0h7mo")
-animation = &"dash"
+animation = &"attack"
 autoplay = "idle"
 script = ExtResource("5_bwjto")
 state_comp = NodePath("../state_comp")
@@ -217,16 +218,18 @@ state_comp = NodePath("../state_comp")
 position = Vector2(3, -1)
 shape = SubResource("CircleShape2D_0e48y")
 
-[node name="InputComp" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("attack_comp")]
+[node name="InputComp" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("attack_comp", "sprite")]
 script = ExtResource("7_u1c27")
 attack_comp = NodePath("../attack_comp")
+sprite = NodePath("../player_sprite")
 metadata/_custom_type_script = "uid://dll2nqqutk727"
 
-[node name="movement_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "dir_comp")]
+[node name="movement_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "dir_comp", "state_comp")]
 script = ExtResource("6_606se")
 speed = 500.0
 body = NodePath("..")
 dir_comp = NodePath("../InputComp")
+state_comp = NodePath("../state_comp")
 metadata/_custom_type_script = "uid://7x44mbgb040j"
 
 [node name="state_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "direction_comp")]
