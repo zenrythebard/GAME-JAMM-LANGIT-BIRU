@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://rcxgw30dysba" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Tilemap Tanaman 2.png" id="1_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
-[ext_resource type="Script" uid="uid://cqewfog5wv1ou" path="res://script/camera_2d.gd" id="2_q6r6c"]
+[ext_resource type="Script" path="res://script/camera_2d.gd" id="2_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://dvywg3cnawi81" path="res://player.tscn" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://cfeuvsdi3kc2l" path="res://enemy_basic.tscn" id="12_x0ka3"]
 
@@ -283,10 +283,11 @@ body = NodePath("../player")
 
 [node name="player" parent="." instance=ExtResource("3_0hol4")]
 unique_name_in_owner = true
+dash_speed = 100.0
 
 [node name="enemy_basic" parent="." node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
 position = Vector2(487, 185)
-speed = 100.0
+speed = 70.0
 damage = 0.0
 player = NodePath("../player")
 start_point = NodePath("../patrol_path/start")

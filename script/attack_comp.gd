@@ -16,13 +16,13 @@ func _physics_process(delta: float) -> void:
 	attack_speed = attack_frames / attack_dur
 	match state_comp.state:
 		"moving_right":
-			rotation_degrees = 0
+			rotation_degrees = -45
 		"moving_left":
-			rotation_degrees = 180
-		"moving_up":
-			rotation_degrees = 270
+			rotation_degrees = 225
 		"moving_down":
 			rotation_degrees = 90
+		"moving_up":
+			rotation_degrees = -45
 	if state_comp.state == "attacking":
 		if sprite.frame >= 3:
 			attacking = true

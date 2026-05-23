@@ -141,7 +141,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dash",
-"speed": 2.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -209,7 +209,7 @@ dash_speed = 200.0
 [node name="player_sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp")]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_0h7mo")
-animation = &"attack"
+animation = &"dash"
 autoplay = "idle"
 script = ExtResource("5_bwjto")
 state_comp = NodePath("../state_comp")
@@ -224,12 +224,13 @@ attack_comp = NodePath("../attack_comp")
 sprite = NodePath("../player_sprite")
 metadata/_custom_type_script = "uid://dll2nqqutk727"
 
-[node name="movement_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "dir_comp", "state_comp")]
+[node name="movement_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "dir_comp", "state_comp", "sprite")]
 script = ExtResource("6_606se")
 speed = 500.0
 body = NodePath("..")
 dir_comp = NodePath("../InputComp")
 state_comp = NodePath("../state_comp")
+sprite = NodePath("../player_sprite")
 metadata/_custom_type_script = "uid://7x44mbgb040j"
 
 [node name="state_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "direction_comp")]
@@ -251,10 +252,11 @@ offset_bottom = -50.0
 text = "Health: 10"
 
 [node name="attack_comp" type="Area2D" parent="." node_paths=PackedStringArray("state_comp", "sprite", "body")]
+rotation = 3.9269907
 script = ExtResource("10_pylmc")
 state_comp = NodePath("../state_comp")
 sprite = NodePath("../player_sprite")
 body = NodePath("..")
 
 [node name="attack_collision" type="CollisionPolygon2D" parent="attack_comp"]
-polygon = PackedVector2Array(70, -60, 83, -1, 70, 60, 0, 75, 0, 0, 0, -75)
+polygon = PackedVector2Array(70, -60, 83, -1, 70, 60, 0, 85, 0, 0, 0, -85)
