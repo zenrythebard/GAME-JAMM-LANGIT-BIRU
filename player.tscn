@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xoqdjx2wwgp8" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Attack01.png" id="2_nvl01"]
 [ext_resource type="Texture2D" uid="uid://eedsd1wntp7v" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="3_ivps1"]
 [ext_resource type="Texture2D" uid="uid://bkbh766c5wvgd" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="4_urp6f"]
-[ext_resource type="Script" path="res://script/player_sprite.gd" id="5_bwjto"]
+[ext_resource type="Script" uid="uid://xkcqg7jrkwbg" path="res://script/player_sprite.gd" id="5_bwjto"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="6_606se"]
 [ext_resource type="Script" uid="uid://s6xidfl4aow1" path="res://script/input_comp.gd" id="7_u1c27"]
 [ext_resource type="Script" path="res://script/state_comp.gd" id="8_op7ga"]
@@ -217,6 +217,6 @@ script = ExtResource("10_pylmc")
 state_comp = NodePath("../state_comp")
 
 [node name="attack_collision" type="CollisionPolygon2D" parent="attack_comp"]
-polygon = PackedVector2Array(70, -60, 83, -1, 70, 60, 0, 0)
+polygon = PackedVector2Array(70, -60, 83, -1, 70, 60, 0, 75, 0, 0, 0, -75)
 
 [connection signal="area_entered" from="attack_comp" to="attack_comp" method="_on_area_entered"]
