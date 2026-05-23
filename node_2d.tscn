@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://wcnmegsad67h"]
+[gd_scene load_steps=34 format=3 uid="uid://wcnmegsad67h"]
 
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="2_0e48y"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bkbh766c5wvgd" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="7_rj586"]
 [ext_resource type="Script" uid="uid://ce2ys23aojoeb" path="res://script/state_comp.gd" id="8_4d7sh"]
 [ext_resource type="Script" uid="uid://xkcqg7jrkwbg" path="res://script/player_sprite.gd" id="8_ir8iy"]
+[ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="11_hqns4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
 radius = 35.128338
@@ -217,3 +218,12 @@ state_comp = NodePath("../state_comp")
 script = ExtResource("8_4d7sh")
 body = NodePath("..")
 direction_comp = NodePath("../input_comp")
+
+[node name="attack_comp" type="Area2D" parent="player" node_paths=PackedStringArray("state_comp")]
+script = ExtResource("11_hqns4")
+state_comp = NodePath("../state_comp")
+
+[node name="attack_collision" type="CollisionPolygon2D" parent="player/attack_comp"]
+polygon = PackedVector2Array(70, -60, 83, -1, 70, 60, 0, 0)
+
+[connection signal="area_entered" from="player/attack_comp" to="player/attack_comp" method="_on_area_entered"]

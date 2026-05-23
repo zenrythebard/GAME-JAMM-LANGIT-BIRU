@@ -9,14 +9,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if direction_comp.attacking == true:
+		state = "attacking"
+		return
 	if body.velocity:
 		if body.velocity.x > 0:
 			state = "moving_right"
 		if body.velocity.x < 0:
 			state = "moving_left"	
+		if body.velocity.y > 0:
+			state = "moving_down"
+		if body.velocity.y < 0:
+			state = "moving_up"
 	else :
 		state = "idle"
-	if direction_comp.attacking == true:
-		state = "attacking"
+	
 
 	
