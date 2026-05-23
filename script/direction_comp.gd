@@ -1,2 +1,3 @@
-class_name direction_comp extends Node2D
+class_name DirectionComp extends Node2D
 var direction : Vector2
+var attacking : bool = false

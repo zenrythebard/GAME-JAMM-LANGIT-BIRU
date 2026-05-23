@@ -1,11 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://wcnmegsad67h"]
+[gd_scene load_steps=26 format=3 uid="uid://wcnmegsad67h"]
 
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="2_0e48y"]
 [ext_resource type="Script" uid="uid://cqewfog5wv1ou" path="res://script/camera_2d.gd" id="2_q6r6c"]
 [ext_resource type="Script" uid="uid://s6xidfl4aow1" path="res://script/input_comp.gd" id="3_epypp"]
 [ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="4_0hol4"]
-[ext_resource type="Texture2D" uid="uid://xoqdjx2wwgp8" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Attack01.png" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://eedsd1wntp7v" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://bkbh766c5wvgd" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="7_rj586"]
 [ext_resource type="Script" uid="uid://ce2ys23aojoeb" path="res://script/state_comp.gd" id="8_4d7sh"]
@@ -13,30 +12,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
 radius = 35.128338
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
-atlas = ExtResource("6_ir8iy")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ei405"]
-atlas = ExtResource("6_ir8iy")
-region = Rect2(100, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8dv2"]
-atlas = ExtResource("6_ir8iy")
-region = Rect2(200, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2nhjh"]
-atlas = ExtResource("6_ir8iy")
-region = Rect2(300, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bjha6"]
-atlas = ExtResource("6_ir8iy")
-region = Rect2(400, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gt76g"]
-atlas = ExtResource("6_ir8iy")
-region = Rect2(500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
 atlas = ExtResource("6_kdubu")
@@ -98,29 +73,6 @@ region = Rect2(700, 0, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vxoj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ei405")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e8dv2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2nhjh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bjha6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gt76g")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_d21ai")
 }, {
 "duration": 1.0,
@@ -139,7 +91,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_x0ka3")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -168,7 +120,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_fs4d3")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"Walk",
 "speed": 5.0
 }]
 
@@ -205,15 +157,13 @@ health = 10.0
 body = NodePath("..")
 metadata/_custom_type_script = "uid://d1mxg72ybcndy"
 
-[node name="player_sprite" type="AnimatedSprite2D" parent="player" node_paths=PackedStringArray("state_comp")]
+[node name="player_sprite" type="AnimatedSprite2D" parent="player"]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_0h7mo")
-animation = &"attack"
-autoplay = "idle"
+animation = &"Idle"
+autoplay = "Idle"
 script = ExtResource("8_ir8iy")
-state_comp = NodePath("../state_comp")
 
-[node name="state_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body", "direction_comp")]
+[node name="state_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body")]
 script = ExtResource("8_4d7sh")
 body = NodePath("..")
-direction_comp = NodePath("../input_comp")
