@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://wcnmegsad67h"]
+[gd_scene load_steps=6 format=3 uid="uid://wcnmegsad67h"]
 
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="2_0e48y"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://bqawwaww8hdv5" path="res://input_comp.gd" id="3_epypp"]
+=======
+[ext_resource type="Script" uid="uid://dll2nqqutk727" path="res://script/direction_comp.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="4_0hol4"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_epypp"]
 radius = 59.3043
@@ -27,3 +32,12 @@ dir_comp = NodePath("../input_comp")
 
 [node name="input_comp" type="Node2D" parent="player"]
 script = ExtResource("3_epypp")
+
+[node name="health_comp" type="Node2D" parent="player"]
+script = ExtResource("4_0hol4")
+
+[node name="enemy" type="CharacterBody2D" parent="."]
+
+[node name="movement_comp" type="Node2D" parent="enemy" node_paths=PackedStringArray("body")]
+script = ExtResource("2_0e48y")
+body = NodePath("..")
