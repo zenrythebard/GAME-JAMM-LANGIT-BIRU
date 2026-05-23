@@ -2,7 +2,6 @@ extends AnimatedSprite2D
 @export var state_comp : StateComp
 
 func _physics_process(delta: float) -> void:
-	print(state_comp.state)
 	if state_comp.state.contains("moving"):
 		play("walk")
 		match state_comp.state:
