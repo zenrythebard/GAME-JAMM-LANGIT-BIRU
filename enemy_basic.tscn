@@ -26,6 +26,13 @@ health = 10.0
 body = NodePath("..")
 metadata/_custom_type_script = "uid://d1mxg72ybcndy"
 
+[node name="Label" type="Label" parent="health_comp"]
+offset_left = -38.0
+offset_top = -73.0
+offset_right = 41.0
+offset_bottom = -50.0
+text = "Health: 10"
+
 [node name="movement_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "dir_comp")]
 script = ExtResource("1_20uc5")
 body = NodePath("..")
@@ -50,8 +57,9 @@ script = ExtResource("6_pfill")
 body = NodePath("..")
 direction_comp = NodePath("../navigation_comp")
 
-[node name="hurtbox" type="Area2D" parent="."]
+[node name="hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp")]
 script = ExtResource("7_pfill")
+health_comp = NodePath("../health_comp")
 
 [node name="hurtbox_shape" type="CollisionShape2D" parent="hurtbox"]
 shape = SubResource("CircleShape2D_pfill")

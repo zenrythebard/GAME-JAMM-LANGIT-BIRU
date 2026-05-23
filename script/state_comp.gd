@@ -12,6 +12,9 @@ func _physics_process(delta: float) -> void:
 	if direction_comp.attacking == true:
 		state = "attacking"
 		return
+	if direction_comp.dashing == true:
+		state = "dashing"
+		return
 	if body.velocity:
 		if body.velocity.x > 0:
 			state = "moving_right"

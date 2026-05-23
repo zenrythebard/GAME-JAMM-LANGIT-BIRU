@@ -13,4 +13,6 @@ func _physics_process(delta: float) -> void:
 		play("idle")
 	if state_comp.state == "attacking":
 		play("attack")
+	if state_comp.state == "dashing":
+		play("dash")
 		
