@@ -4,23 +4,33 @@ var entered:bool
 var attacked : bool
 var current_hitbox : AttackComp = null
 var is_hit : bool = false
+var current_item : ItemPickup = null
 
 func _physics_process(delta: float) -> void:
 	if current_hitbox == null:
 		return
 	if is_hit == true:
 		return
-	if entered and current_hitbox.attacking:
+	if current_hitbox.attacking:
+		print("yes")
 		health_comp.health -= current_hitbox.damage
 		is_hit = true
 		await get_tree().create_timer(current_hitbox.attack_speed).timeout
 		is_hit = false
 		return
 
-func _on_area_entered(area: AttackComp) -> void:
-	entered = true
-	current_hitbox = area
-
-func _on_area_exited(area: AttackComp) -> void:
-	entered = false
-	current_hitbox = null
+func _on_area_entered(area: Area2D) -> void:
+	if area is AttackComp:
+		current_hitbox = area
+	if area is ItemPickup:
+		current_item = area
+		health_comp.health += current_item.health_increase
+		current_item.queue_free()
+		
+func _on_area_exited(area: Area2D) -> void:
+	if area is AttackComp:
+		current_hitbox = null
+	if area is ItemPickup:
+		current_item = null
+		
+	

@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://dvywg3cnawi81"]
+[gd_scene load_steps=38 format=3 uid="uid://dvywg3cnawi81"]
 
 [ext_resource type="Script" uid="uid://clxahla1koxtm" path="res://script/player.gd" id="1_n7ghd"]
+[ext_resource type="Script" uid="uid://b47yvlo7mnsj" path="res://script/hurtbox.gd" id="2_ivps1"]
 [ext_resource type="Texture2D" uid="uid://xoqdjx2wwgp8" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Attack01.png" id="2_nvl01"]
 [ext_resource type="Texture2D" uid="uid://eedsd1wntp7v" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="3_ivps1"]
 [ext_resource type="Texture2D" uid="uid://doab06klprq3f" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Attack02.png" id="3_nvl01"]
@@ -11,6 +12,9 @@
 [ext_resource type="Script" uid="uid://ce2ys23aojoeb" path="res://script/state_comp.gd" id="8_op7ga"]
 [ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="9_q13i1"]
 [ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="10_pylmc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
+radius = 35.128338
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
 atlas = ExtResource("2_nvl01")
@@ -196,15 +200,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
-radius = 35.128338
-
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_n7ghd")
 health = 10.0
 speed = 100.0
 damage = 1.0
 dash_speed = 200.0
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp")]
+collision_mask = 2
+script = ExtResource("2_ivps1")
+health_comp = NodePath("../health_comp")
+metadata/_custom_type_script = "uid://b47yvlo7mnsj"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(3, -1)
+shape = SubResource("CircleShape2D_0e48y")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp")]
 scale = Vector2(4, 4)
@@ -253,6 +264,7 @@ text = "Health: 10"
 
 [node name="attack_comp" type="Area2D" parent="." node_paths=PackedStringArray("state_comp", "sprite", "body")]
 rotation = 3.9269907
+collision_mask = 2
 script = ExtResource("10_pylmc")
 state_comp = NodePath("../state_comp")
 sprite = NodePath("../player_sprite")
@@ -260,3 +272,6 @@ body = NodePath("..")
 
 [node name="attack_collision" type="CollisionPolygon2D" parent="attack_comp"]
 polygon = PackedVector2Array(70, -60, 83, -1, 70, 60, 0, 85, 0, 0, 0, -85)
+
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="Hurtbox" method="_on_area_exited"]

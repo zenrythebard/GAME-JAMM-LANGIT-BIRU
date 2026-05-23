@@ -6,6 +6,8 @@ var end_point : Node2D
 var player : CharacterBody2D
 var nav_point_direction : Vector2
 var chase : bool 
+@export var attack_distance : float
+@export var attack_comp : AttackComp
 
 func _ready() -> void:
 	player = body.player
@@ -15,7 +17,10 @@ func _ready() -> void:
 	target_position = goal.global_position
 	
 func _physics_process(delta: float) -> void:
+	if player == null:
+		return
 	direction = nav_point_direction
+	player_checker()
 	if chase:
 		goal = player
 		target_position = goal.global_position
@@ -42,3 +47,12 @@ func chase_player():
 	if is_target_reached():
 		goal = player
 		target_position = goal.global_position
+		
+func player_checker():
+	var player_distance : float = player.position.distance_to(body.position)
+	if player_distance < attack_distance:
+		attacking = true
+		await get_tree().create_timer(attack_comp.attack_speed).timeout
+		attacking = false
+	else:
+		attacking = false

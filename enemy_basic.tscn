@@ -1,13 +1,42 @@
-[gd_scene load_steps=20 format=3 uid="uid://cfeuvsdi3kc2l"]
+[gd_scene load_steps=29 format=3 uid="uid://cfeuvsdi3kc2l"]
 
 [ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="1_2eiu5"]
 [ext_resource type="Script" uid="uid://cm45f2frggde4" path="res://script/enemy_basic.gd" id="1_2hcwk"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="1_20uc5"]
+[ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="2_ou7e2"]
 [ext_resource type="Texture2D" uid="uid://dbqxtr0kt6vu" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Walk.png" id="2_wtxpi"]
-[ext_resource type="Script" path="res://script/enemy_basic_sprite.gd" id="3_xixcj"]
+[ext_resource type="Texture2D" uid="uid://cy64xrcjyda5w" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Attack01.png" id="3_136gi"]
+[ext_resource type="Script" uid="uid://db7rh7bg3y0im" path="res://script/enemy_basic_sprite.gd" id="3_xixcj"]
 [ext_resource type="Script" uid="uid://njugueidf0ly" path="res://script/navigation_comp.gd" id="6_fvy52"]
 [ext_resource type="Script" uid="uid://bvoco4eusomqu" path="res://script/enemy_state_comp.gd" id="6_pfill"]
 [ext_resource type="Script" uid="uid://b47yvlo7mnsj" path="res://script/hurtbox.gd" id="7_pfill"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l2jem"]
+radius = 14.000992
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5w6q"]
+atlas = ExtResource("3_136gi")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87jjy"]
+atlas = ExtResource("3_136gi")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4stwq"]
+atlas = ExtResource("3_136gi")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjm8y"]
+atlas = ExtResource("3_136gi")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lac8l"]
+atlas = ExtResource("3_136gi")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iabin"]
+atlas = ExtResource("3_136gi")
+region = Rect2(500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ou7e2"]
 atlas = ExtResource("2_wtxpi")
@@ -43,7 +72,25 @@ region = Rect2(700, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h5w6q"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5w6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87jjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4stwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjm8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lac8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iabin")
+}],
 "loop": true,
 "name": &"attack",
 "speed": 5.0
@@ -79,7 +126,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fvy52"]
-radius = 47.095646
+radius = 35.014282
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pfill"]
 radius = 46.010868
@@ -90,10 +137,22 @@ health = 10.0
 speed = 300.0
 damage = 10.0
 
+[node name="AttackComp" type="Area2D" parent="." node_paths=PackedStringArray("state_comp", "sprite", "body")]
+collision_layer = 2
+script = ExtResource("2_ou7e2")
+state_comp = NodePath("../state_comp")
+sprite = NodePath("../AnimatedSprite2D")
+body = NodePath("..")
+metadata/_custom_type_script = "uid://bq7bxbjt82ohu"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComp"]
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_l2jem")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp")]
 scale = Vector2(4.4665346, 4.4665346)
 sprite_frames = SubResource("SpriteFrames_h5w6q")
-animation = &"walk"
+animation = &"attack"
 autoplay = "walk"
 script = ExtResource("3_xixcj")
 state_comp = NodePath("../state_comp")
@@ -122,9 +181,11 @@ metadata/_custom_type_script = "uid://7x44mbgb040j"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fvy52")
 
-[node name="navigation_comp" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("body")]
+[node name="navigation_comp" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("body", "attack_comp")]
 script = ExtResource("6_fvy52")
 body = NodePath("..")
+attack_distance = 110.0
+attack_comp = NodePath("../AttackComp")
 
 [node name="state_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "direction_comp")]
 script = ExtResource("6_pfill")
@@ -132,6 +193,7 @@ body = NodePath("..")
 direction_comp = NodePath("../navigation_comp")
 
 [node name="hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp")]
+collision_layer = 2
 script = ExtResource("7_pfill")
 health_comp = NodePath("../health_comp")
 

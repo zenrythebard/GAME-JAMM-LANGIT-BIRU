@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	if state_comp.state == "attacking":
 		if sprite.frame >= 3:
 			attacking = true
+			state_comp.state = ""
 	else:
 		attacking = false
 		

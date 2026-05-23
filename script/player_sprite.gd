@@ -3,7 +3,6 @@ extends AnimatedSprite2D
 var dash_played : bool = false
 
 func _physics_process(delta: float) -> void:
-	print(state_comp.state)
 	if state_comp.state != "dashing":
 		dash_played = false
 	if state_comp.state.contains("moving"):

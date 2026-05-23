@@ -1,0 +1,1 @@
+class_name item_pickup extends CollisionShape2D
