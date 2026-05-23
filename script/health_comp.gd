@@ -1,4 +1,4 @@
-extends Node2D
+class_name health_comp extends Node2D
 @export var health : float
 @export var body : CharacterBody2D
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7go3f8sdtqxx"]
+[gd_scene load_steps=5 format=3 uid="uid://wcnmegsad67h"]
 
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://s6xidfl4aow1" path="res://input_comp.gd" id="3_epypp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
 radius = 70.00714
@@ -14,3 +16,14 @@ shape = SubResource("CircleShape2D_0e48y")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 texture = ExtResource("1_wtcfe")
+
+[node name="movement_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body", "dir_comp")]
+script = ExtResource("2_0e48y")
+speed = 1000.0
+body = NodePath("..")
+dir_comp = NodePath("../input_comp")
+metadata/_custom_type_script = "uid://7x44mbgb040j"
+
+[node name="input_comp" type="Node2D" parent="player"]
+script = ExtResource("3_epypp")
+metadata/_custom_type_script = "uid://s6xidfl4aow1"
