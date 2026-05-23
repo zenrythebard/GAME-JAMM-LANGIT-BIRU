@@ -17,7 +17,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	direction = nav_point_direction
 	if chase:
-		print("chasing")
 		goal = player
 		target_position = goal.global_position
 		chase_player()

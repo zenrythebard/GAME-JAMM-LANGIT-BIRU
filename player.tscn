@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://xkcqg7jrkwbg" path="res://script/player_sprite.gd" id="5_bwjto"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="6_606se"]
 [ext_resource type="Script" uid="uid://s6xidfl4aow1" path="res://script/input_comp.gd" id="7_u1c27"]
-[ext_resource type="Script" path="res://script/state_comp.gd" id="8_op7ga"]
+[ext_resource type="Script" uid="uid://ce2ys23aojoeb" path="res://script/state_comp.gd" id="8_op7ga"]
 [ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="9_q13i1"]
-[ext_resource type="Script" path="res://script/attack_comp.gd" id="10_pylmc"]
+[ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="10_pylmc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
 atlas = ExtResource("2_nvl01")
@@ -212,11 +212,10 @@ health = 10.0
 body = NodePath("..")
 metadata/_custom_type_script = "uid://d1mxg72ybcndy"
 
-[node name="attack_comp" type="Area2D" parent="." node_paths=PackedStringArray("state_comp")]
+[node name="attack_comp" type="Area2D" parent="." node_paths=PackedStringArray("state_comp", "sprite")]
 script = ExtResource("10_pylmc")
 state_comp = NodePath("../state_comp")
+sprite = NodePath("../player_sprite")
 
 [node name="attack_collision" type="CollisionPolygon2D" parent="attack_comp"]
 polygon = PackedVector2Array(70, -60, 83, -1, 70, 60, 0, 75, 0, 0, 0, -75)
-
-[connection signal="area_entered" from="attack_comp" to="attack_comp" method="_on_area_entered"]

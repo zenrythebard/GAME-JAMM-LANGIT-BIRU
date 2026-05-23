@@ -1,8 +1,15 @@
 class_name AttackComp extends Area2D
 @export var state_comp: StateComp
+@export var sprite: AnimatedSprite2D 
+var attacking:bool
+var attack_speed: float
+var attack_anim : String = "attack"
 
 
 func _physics_process(delta: float) -> void:
+	var attack_frames : float = sprite.sprite_frames.get_frame_count(attack_anim)
+	var attack_dur : float = sprite.sprite_frames.get_animation_speed(attack_anim)
+	attack_speed = attack_frames / attack_dur
 	match state_comp.state:
 		"moving_right":
 			rotation_degrees = 0
@@ -12,7 +19,8 @@ func _physics_process(delta: float) -> void:
 			rotation_degrees = 270
 		"moving_down":
 			rotation_degrees = 90
-	pass
-
-func _on_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+	if state_comp.state == "attacking":
+		attacking = true
+	else:
+		attacking = false
+		
