@@ -1,13 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://wcnmegsad67h"]
+[gd_scene load_steps=5 format=3 uid="uid://wcnmegsad67h"]
 
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://dll2nqqutk727" path="res://script/direction_comp.gd" id="3_epypp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epypp"]
+radius = 59.3043
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Alen" type="Sprite2D" parent="."]
-position = Vector2(403, 223)
+[node name="player" type="CharacterBody2D" parent="."]
+
+[node name="collision_shape" type="CollisionShape2D" parent="player"]
+shape = SubResource("CircleShape2D_epypp")
+
+[node name="timer" type="Timer" parent="player"]
+
+[node name="sprite" type="Sprite2D" parent="player"]
 texture = ExtResource("1_wtcfe")
 
-[node name="Danu" type="Sprite2D" parent="."]
-position = Vector2(894, 288)
-texture = ExtResource("1_wtcfe")
+[node name="movement_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body")]
+script = ExtResource("2_0e48y")
+body = NodePath("..")
+
+[node name="direction_comp" type="Node2D" parent="player"]
+script = ExtResource("3_epypp")
