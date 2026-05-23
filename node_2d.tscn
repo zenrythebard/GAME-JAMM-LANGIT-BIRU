@@ -2,18 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="2_0e48y"]
-[ext_resource type="Script" uid="uid://cqewfog5wv1ou" path="res://script/camera_2d.gd" id="2_q6r6c"]
-[ext_resource type="Script" uid="uid://s6xidfl4aow1" path="res://script/input_comp.gd" id="3_epypp"]
+[ext_resource type="Script" path="res://script/camera_2d.gd" id="2_q6r6c"]
 [ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://xoqdjx2wwgp8" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Attack01.png" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://eedsd1wntp7v" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://bkbh766c5wvgd" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="7_rj586"]
-[ext_resource type="Script" uid="uid://ce2ys23aojoeb" path="res://script/state_comp.gd" id="8_4d7sh"]
-[ext_resource type="Script" uid="uid://xkcqg7jrkwbg" path="res://script/player_sprite.gd" id="8_ir8iy"]
-[ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="11_hqns4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
-radius = 35.128338
+[ext_resource type="Script" path="res://script/state_comp.gd" id="8_4d7sh"]
+[ext_resource type="Script" uid="uid://s6xidfl4aow1" path="res://script/input_comp.gd" id="8_hqns4"]
+[ext_resource type="Script" path="res://script/player_sprite.gd" id="8_ir8iy"]
+[ext_resource type="Script" path="res://script/attack_comp.gd" id="11_hqns4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
 atlas = ExtResource("6_ir8iy")
@@ -173,6 +170,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
+radius = 35.128338
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -185,27 +185,6 @@ body = NodePath("../player")
 
 [node name="player" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(3, -1)
-shape = SubResource("CircleShape2D_0e48y")
-
-[node name="movement_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body", "dir_comp")]
-script = ExtResource("2_0e48y")
-speed = 1000.0
-body = NodePath("..")
-dir_comp = NodePath("../input_comp")
-metadata/_custom_type_script = "uid://7x44mbgb040j"
-
-[node name="input_comp" type="Node2D" parent="player"]
-script = ExtResource("3_epypp")
-metadata/_custom_type_script = "uid://s6xidfl4aow1"
-
-[node name="health_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body")]
-script = ExtResource("4_0hol4")
-health = 10.0
-body = NodePath("..")
-metadata/_custom_type_script = "uid://d1mxg72ybcndy"
-
 [node name="player_sprite" type="AnimatedSprite2D" parent="player" node_paths=PackedStringArray("state_comp")]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_0h7mo")
@@ -214,10 +193,31 @@ autoplay = "idle"
 script = ExtResource("8_ir8iy")
 state_comp = NodePath("../state_comp")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(3, -1)
+shape = SubResource("CircleShape2D_0e48y")
+
+[node name="movement_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body", "dir_comp")]
+script = ExtResource("2_0e48y")
+speed = 500.0
+body = NodePath("..")
+dir_comp = NodePath("../input_comp")
+metadata/_custom_type_script = "uid://7x44mbgb040j"
+
+[node name="input_comp" type="Node2D" parent="player"]
+script = ExtResource("8_hqns4")
+metadata/_custom_type_script = "uid://s6xidfl4aow1"
+
 [node name="state_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body", "direction_comp")]
 script = ExtResource("8_4d7sh")
 body = NodePath("..")
 direction_comp = NodePath("../input_comp")
+
+[node name="health_comp" type="Node2D" parent="player" node_paths=PackedStringArray("body")]
+script = ExtResource("4_0hol4")
+health = 10.0
+body = NodePath("..")
+metadata/_custom_type_script = "uid://d1mxg72ybcndy"
 
 [node name="attack_comp" type="Area2D" parent="player" node_paths=PackedStringArray("state_comp")]
 script = ExtResource("11_hqns4")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfeuvsdi3kc2l"]
+
+[ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="1_20uc5"]
+
+[node name="enemy_basic" type="Node2D"]
+
+[node name="movement_comp" type="Node2D" parent="."]
+script = ExtResource("1_20uc5")
+metadata/_custom_type_script = "uid://7x44mbgb040j"
