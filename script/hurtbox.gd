@@ -5,6 +5,7 @@ var attacked : bool
 var current_hitbox : AttackComp = null
 var is_hit : bool = false
 var current_item : ItemPickup = null
+@export var state_comp : StateComp
 
 func _physics_process(delta: float) -> void:
 	if current_hitbox == null:
@@ -12,7 +13,9 @@ func _physics_process(delta: float) -> void:
 	if is_hit == true:
 		return
 	if current_hitbox.attacking:
-		print("yes")
+		if state_comp.state == "dashing":
+			print("dodge")
+			return
 		health_comp.health -= current_hitbox.damage
 		is_hit = true
 		await get_tree().create_timer(current_hitbox.attack_speed).timeout

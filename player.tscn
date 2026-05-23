@@ -207,10 +207,11 @@ speed = 100.0
 damage = 1.0
 dash_speed = 200.0
 
-[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp")]
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp", "state_comp")]
 collision_mask = 2
 script = ExtResource("2_ivps1")
 health_comp = NodePath("../health_comp")
+state_comp = NodePath("../state_comp")
 metadata/_custom_type_script = "uid://b47yvlo7mnsj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]

@@ -24,9 +24,11 @@ func _physics_process(delta: float) -> void:
 		"moving_up":
 			rotation_degrees = -45
 	if state_comp.state == "attacking":
-		if sprite.frame >= 3:
+		if  sprite.animation == "attack" and 3 <= sprite.frame and sprite.frame <= 5:
 			attacking = true
 			state_comp.state = ""
+		else:
+			attacking = false
 	else:
 		attacking = false
 		

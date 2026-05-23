@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=4 uid="uid://wcnmegsad67h"]
 
-[ext_resource type="PackedScene" uid="uid://k40kmbn4ggjc" path="res://energy_drink.tscn" id="1_kdubu"]
+[ext_resource type="PackedScene" path="res://energy_drink.tscn" id="1_kdubu"]
 [ext_resource type="Texture2D" uid="uid://rcxgw30dysba" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Tilemap Tanaman 2.png" id="1_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://e1gd2b5p8ouw" path="res://icon.svg" id="1_wtcfe"]
-[ext_resource type="Script" uid="uid://cqewfog5wv1ou" path="res://script/camera_2d.gd" id="2_q6r6c"]
+[ext_resource type="Script" path="res://script/camera_2d.gd" id="2_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://dvywg3cnawi81" path="res://player.tscn" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://cfeuvsdi3kc2l" path="res://enemy_basic.tscn" id="12_x0ka3"]
 
