@@ -27,6 +27,7 @@ func _ready() -> void:
 			state_comp.state = "moving_down"
 
 func _physics_process(delta: float) -> void:
+	soul_check()
 	prev_age = level_age
 	match level_age:
 		0: 
@@ -47,25 +48,35 @@ func _physics_process(delta: float) -> void:
 		2: #adult
 			max_health = 15
 			weight = 3
-			knockback = 2
+			knockback = 1
 			speed = 100
-			damage = 2
+			damage = 1.5
 			dash_speed = 100
 		3: #youth
 			max_health = 20
 			weight = 2
-			knockback = 2
+			knockback = 1.2
 			speed = 120
-			damage = 3
+			damage = 2
 			dash_speed = 120
 		4: #child
 			max_health = 10
 			weight = 1
-			knockback = 2
+			knockback = 0.7
 			speed = 100
-			damage = 3
+			damage = 1
 			dash_speed = 150
 	if prev_age < level_age and prev_age != 0:
 		health_comp.health += max_health * 0.25
 	else:
 		return
+
+func soul_check():
+	if Global.level_age >= 0:
+		level_age = 1
+	if Global.level_age >= 12:
+		level_age = 2
+	if Global.level_age >= 35:
+		level_age = 3
+	if Global.level_age >= 42:
+		level_age = 3
