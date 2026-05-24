@@ -1,7 +1,5 @@
 ~ start
 Constantine: Well this is cheerful...
 Constantine: Who...
-Constantine: No, that doesn't matter.
-Constantine: This place... [wait=1] smells of blood.
-Constantine: ...[wait=1] delectable...
-Henry: Wait Constantine
+Constantine: [shake rate=20 level=10] What are you doing?![/shake]
+=> END
