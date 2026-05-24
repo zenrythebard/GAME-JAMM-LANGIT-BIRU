@@ -45,5 +45,5 @@ func _on_area_exited(area: Area2D) -> void:
 		current_item = null
 		
 func knockback():
-	var knock_dir : Vector2 = -(current_hitbox.body.position - body.position).normalized()
+	var knock_dir : Vector2 = -(current_hitbox.body.global_position - body.global_position).normalized()
 	attack_velocity = knock_dir * 5 * current_hitbox.body.knockback / body.weight 

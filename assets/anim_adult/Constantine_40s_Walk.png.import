@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1mrhltps3y2b"
-path="res://.godot/imported/Constantine_AttackUpSide.png-ef5bbb63992ffc30fd1570dc7e491bba.ctex"
+uid="uid://dxuwbn4ymcndy"
+path="res://.godot/imported/Constantine_40s_Walk.png-0ff20b0ccc2b03aac69fc3ee98852eb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/old_anim/Constantine_AttackUpSide.png"
-dest_files=["res://.godot/imported/Constantine_AttackUpSide.png-ef5bbb63992ffc30fd1570dc7e491bba.ctex"]
+source_file="res://assets/anim_adult/Constantine_40s_Walk.png"
+dest_files=["res://.godot/imported/Constantine_40s_Walk.png-0ff20b0ccc2b03aac69fc3ee98852eb5.ctex"]
 
 [params]
 

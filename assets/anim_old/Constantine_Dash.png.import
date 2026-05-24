@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drwxcxe1ch7an"
-path="res://.godot/imported/Constantine_AttackDown.png-150602ef3cc11ac36ed9d9370b457edf.ctex"
+uid="uid://bo1680sqc6exl"
+path="res://.godot/imported/Constantine_Dash.png-082bfae6133899a3b1dfaed0fbe1dcdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/old_anim/Constantine_AttackDown.png"
-dest_files=["res://.godot/imported/Constantine_AttackDown.png-150602ef3cc11ac36ed9d9370b457edf.ctex"]
+source_file="res://assets/anim_old/Constantine_Dash.png"
+dest_files=["res://.godot/imported/Constantine_Dash.png-082bfae6133899a3b1dfaed0fbe1dcdb.ctex"]
 
 [params]
 

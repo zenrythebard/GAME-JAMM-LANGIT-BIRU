@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 			attacking = true
 		elif sprite.animation.contains("attack") and sprite.frame >= 5:
 			state_comp.state = ""
+			attacking = false
 		else:
 			attacking = false
 	else:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl4i2cknefs7g"
-path="res://.godot/imported/Constantine_walk.png-9f2d9a8266e53c4842d3de84e4248bd8.ctex"
+uid="uid://dsxjm1jpscpfo"
+path="res://.godot/imported/Constantine_40s_Dash.png-f00cbf8bfe5a58c361b369ea26583302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/old_anim/Constantine_walk.png"
-dest_files=["res://.godot/imported/Constantine_walk.png-9f2d9a8266e53c4842d3de84e4248bd8.ctex"]
+source_file="res://assets/anim_adult/Constantine_40s_Dash.png"
+dest_files=["res://.godot/imported/Constantine_40s_Dash.png-f00cbf8bfe5a58c361b369ea26583302.ctex"]
 
 [params]
 

@@ -52,7 +52,7 @@ func chase_player():
 		target_position = goal.global_position
 		
 func player_checker():
-	var player_distance : float = player.position.distance_to(body.position)
+	var player_distance : float = player.global_position.distance_to(body.global_position)
 	if player_distance < attack_distance:
 		attacking = true
 		timer.start(attack_comp.attack_speed)
