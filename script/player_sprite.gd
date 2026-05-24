@@ -7,6 +7,7 @@ const PLAYER_OLD = preload("uid://qx8v55c1xjg")
 const PLAYER_YOUTH = preload("uid://bbscml3kehwme")
 const PLAYER_KID = preload("uid://rhsfd7nfhsuw")
 const PLAYER_ADULT = preload("uid://madgr7myctku")
+@onready var input_comp: InputComp = $"../InputComp"
 
 func _physics_process(delta: float) -> void:
 	match player.level_age:
@@ -24,11 +25,10 @@ func _physics_process(delta: float) -> void:
 		attack_played = false
 	if state_comp.state.contains("moving"):
 		play("walk")
-		match state_comp.state:
-			"moving_right":
-				flip_h = true
-			"moving_left":
-				flip_h = false
+		if input_comp.direction.x > 0:
+			flip_h = true
+		if input_comp.direction.x < 0:
+			flip_h = false
 	if state_comp.state == "idle":
 		play("idle")
 	if state_comp.state == "attacking" and attack_played == false:

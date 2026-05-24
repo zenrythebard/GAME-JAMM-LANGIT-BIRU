@@ -20,14 +20,15 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if body.velocity:
+		if direction_comp.direction.y > 0:
+			state = "moving_down"
+			return
 		if direction_comp.direction.x > 0:
 			state = "moving_right"
 			return
 		if direction_comp.direction.x < 0:
 			state = "moving_left"	
 			return
-		if direction_comp.direction.y > 0:
-			state = "moving_down"
 		if direction_comp.direction.y < 0:
 			state = "moving_up"
 	else :
