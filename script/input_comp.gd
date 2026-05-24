@@ -10,11 +10,14 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized()
 	
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("attack") and attacking == false:
+	if Input.is_action_just_pressed("attack"):
+		if attacking == true:
+			return
 		attacking = true
 		button_pressed = true
 		await get_tree().create_timer(attack_comp.attack_speed).timeout
 		attacking = false
 		button_pressed = false
+
 	if Input.is_action_just_pressed("dash") and dashing == false:
 		dashing = true

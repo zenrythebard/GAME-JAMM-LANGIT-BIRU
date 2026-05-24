@@ -11,6 +11,8 @@ func _physics_process(delta: float) -> void:
 				flip_h = true
 	if state_comp.state == "attacking":
 		play("attack")
+	if state_comp.state == "attacking_down":
+		play("attack_down")
 	if state_comp.state == "dashing":
 		play("dash")
 		

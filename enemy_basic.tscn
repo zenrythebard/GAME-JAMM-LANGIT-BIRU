@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="2_ou7e2"]
 [ext_resource type="Texture2D" uid="uid://dbqxtr0kt6vu" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Walk.png" id="2_wtxpi"]
 [ext_resource type="Texture2D" uid="uid://cy64xrcjyda5w" path="res://Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Attack01.png" id="3_136gi"]
-[ext_resource type="Script" path="res://script/enemy_basic_sprite.gd" id="3_xixcj"]
+[ext_resource type="Script" uid="uid://db7rh7bg3y0im" path="res://script/enemy_basic_sprite.gd" id="3_xixcj"]
 [ext_resource type="Script" uid="uid://njugueidf0ly" path="res://script/navigation_comp.gd" id="6_fvy52"]
 [ext_resource type="Script" uid="uid://bvoco4eusomqu" path="res://script/enemy_state_comp.gd" id="6_pfill"]
 [ext_resource type="Script" uid="uid://b47yvlo7mnsj" path="res://script/hurtbox.gd" id="7_pfill"]
@@ -104,6 +104,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5w6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87jjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4stwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjm8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lac8l")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_iabin")
+}],
+"loop": true,
+"name": &"attack_down",
 "speed": 6.0
 }, {
 "frames": [{
@@ -229,7 +252,7 @@ visibility_layer = 2
 material = SubResource("CanvasItemMaterial_aua4t")
 scale = Vector2(4.4665346, 4.4665346)
 sprite_frames = SubResource("SpriteFrames_h5w6q")
-animation = &"attack"
+animation = &"attack_down"
 autoplay = "walk"
 script = ExtResource("3_xixcj")
 state_comp = NodePath("../state_comp")

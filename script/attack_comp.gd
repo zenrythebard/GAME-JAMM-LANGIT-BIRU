@@ -11,9 +11,6 @@ func _ready() -> void:
 	damage = body.damage
 
 func _physics_process(delta: float) -> void:
-	var attack_frames : float = sprite.sprite_frames.get_frame_count(attack_anim)
-	var attack_dur : float = sprite.sprite_frames.get_animation_speed(attack_anim)
-	attack_speed = attack_frames / attack_dur
 	match state_comp.state:
 		"moving_right":
 			rotation_degrees = -45
@@ -23,11 +20,18 @@ func _physics_process(delta: float) -> void:
 			rotation_degrees = 90
 		"moving_up":
 			rotation_degrees = -45
-	if state_comp.state.contains("attacking"):
+		"attacking":
+			attack_anim = "attack"
+		"attacking_down":
+			attack_anim = "attack_down"
+	var attack_frames : float = sprite.sprite_frames.get_frame_count(attack_anim)
+	var attack_dur : float = sprite.sprite_frames.get_animation_speed(attack_anim)
+	attack_speed = attack_frames / attack_dur
+	if state_comp.state == "attacking" or state_comp.state == "attacking_down":
 		damage = body.damage
 		if sprite.animation.contains("attack") and 3 <= sprite.frame and sprite.frame <= 4:
 			attacking = true
-			await sprite.animation_finished
+		elif sprite.animation.contains("attack") and sprite.frame >= 5:
 			state_comp.state = ""
 		else:
 			attacking = false
