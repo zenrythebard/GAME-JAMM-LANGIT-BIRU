@@ -785,6 +785,57 @@ position = Vector2(-669, 758)
 [node name="energy_drink" parent="Items" instance=ExtResource("1_kdubu")]
 position = Vector2(-810, 44)
 
+[node name="energy_drink3" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(-1414, -1270)
+
+[node name="energy_drink4" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(1115, -461)
+
+[node name="energy_drink5" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(2991, -2113)
+
+[node name="energy_drink6" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(2991, -1991)
+
+[node name="energy_drink7" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(-335, -2842)
+
+[node name="energy_drink8" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(-1968, -3491)
+
+[node name="energy_drink9" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(-1968, -3400)
+
+[node name="energy_drink10" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(637, -3024)
+
+[node name="energy_drink11" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(1666, -4065)
+
+[node name="energy_drink12" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(3713, -4107)
+
+[node name="energy_drink13" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(5132, -5459)
+
+[node name="energy_drink14" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(5260, -5453)
+
+[node name="energy_drink15" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(5132, -5331)
+
+[node name="energy_drink16" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(5267, -5325)
+
+[node name="energy_drink17" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(695, -4319)
+
+[node name="energy_drink18" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(1123, -6643)
+
+[node name="energy_drink19" parent="Items" instance=ExtResource("1_kdubu")]
+position = Vector2(2383, -5775)
+
 [node name="energy_drink2" parent="Items" instance=ExtResource("1_kdubu")]
 position = Vector2(-810, -60)
 
