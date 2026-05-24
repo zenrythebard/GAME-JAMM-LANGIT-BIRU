@@ -41,12 +41,6 @@ material = SubResource("CanvasItemMaterial_ivps1")
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("1_n7ghd")
-health = 10.0
-speed = 100.0
-damage = 1.0
-dash_speed = 200.0
-weight = 1.0
-knockback = 1.0
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp", "body", "state_comp")]
 collision_mask = 2
@@ -81,7 +75,6 @@ metadata/_custom_type_script = "uid://dll2nqqutk727"
 
 [node name="movement_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "dir_comp", "state_comp", "sprite")]
 script = ExtResource("6_606se")
-speed = 500.0
 body = NodePath("..")
 dir_comp = NodePath("../InputComp")
 state_comp = NodePath("../state_comp")

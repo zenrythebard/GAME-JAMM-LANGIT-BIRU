@@ -1,7 +1,7 @@
 class_name MovementComp extends Node2D
 
-@export var speed: float
-@export var dash_speed: float
+var speed: float
+var dash_speed: float
 @export var body: CharacterBody2D
 var direction: Vector2
 @export var dir_comp: DirectionComp
@@ -11,9 +11,10 @@ var base_speed : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	speed = body.speed
+	await get_tree().create_timer(0.2).timeout
 	base_speed = speed
 	dash_speed = body.dash_speed
+	speed = body.speed
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	direction = dir_comp.direction

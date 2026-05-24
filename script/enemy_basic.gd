@@ -15,9 +15,12 @@ class_name EnemyBasic extends CharacterBody2D
 @export var end_point : Node2D
 var target : Node2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
-var max_health : float = health
+var max_health : float 
 
 func _ready() -> void:
+	max_health = health
 	if point_light_2d == null:
 		return
 	point_light_2d.queue_free()
+	
+	
