@@ -15,6 +15,9 @@ func _process(delta: float) -> void:
 		Global.level_age += body.soul_level
 		print(Global.level_age)
 		body.queue_free()
+		
+	if health > body.max_health:
+		health = body.max_health
 	
 	if health_change == false: 
 		label.visible = false
