@@ -6,7 +6,7 @@ func _on_play_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_packed(preload("uid://400m2ad7p71t"))
 
 
 func _on_quit_pressed() -> void:

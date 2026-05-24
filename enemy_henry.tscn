@@ -1,16 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://cfeuvsdi3kc2l"]
+[gd_scene load_steps=20 format=3 uid="uid://db1vhu8flwp4q"]
 
-[ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="1_2eiu5"]
-[ext_resource type="Script" uid="uid://cm45f2frggde4" path="res://script/enemy_basic.gd" id="1_2hcwk"]
-[ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="1_20uc5"]
-[ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="2_ou7e2"]
-[ext_resource type="Script" uid="uid://db7rh7bg3y0im" path="res://script/enemy_basic_sprite.gd" id="3_xixcj"]
-[ext_resource type="Script" uid="uid://njugueidf0ly" path="res://script/navigation_comp.gd" id="6_fvy52"]
-[ext_resource type="Script" uid="uid://bvoco4eusomqu" path="res://script/enemy_state_comp.gd" id="6_pfill"]
-[ext_resource type="Script" uid="uid://b47yvlo7mnsj" path="res://script/hurtbox.gd" id="7_pfill"]
-[ext_resource type="SpriteFrames" uid="uid://nw4fnv51mhg6" path="res://sprite_animations/enemy_basic.tres" id="8_136gi"]
-[ext_resource type="Script" uid="uid://c7qjurdgudwn5" path="res://script/vision_comp.gd" id="11_l2jem"]
-[ext_resource type="Script" uid="uid://bgse0qrba1kwm" path="res://script/enemy_raycast.gd" id="12_aua4t"]
+[ext_resource type="Script" uid="uid://da0besteg3fdc" path="res://script/enemy_henry.gd" id="1_fv1f4"]
+[ext_resource type="Script" uid="uid://c7qjurdgudwn5" path="res://script/vision_comp.gd" id="2_rn6of"]
+[ext_resource type="Script" uid="uid://bgse0qrba1kwm" path="res://script/enemy_raycast.gd" id="3_n4ci6"]
+[ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="4_ek5xj"]
+[ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="5_2vqm7"]
+[ext_resource type="Script" uid="uid://bvoco4eusomqu" path="res://script/enemy_state_comp.gd" id="6_chmkc"]
+[ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="7_2ou8l"]
+[ext_resource type="SpriteFrames" uid="uid://ck6qnrnuu1tro" path="res://sprite_animations/enemy_henry.tres" id="8_fv1f4"]
+[ext_resource type="Script" uid="uid://db7rh7bg3y0im" path="res://script/enemy_basic_sprite.gd" id="9_r0psj"]
+[ext_resource type="Script" uid="uid://njugueidf0ly" path="res://script/navigation_comp.gd" id="10_a8ors"]
+[ext_resource type="Script" uid="uid://b47yvlo7mnsj" path="res://script/hurtbox.gd" id="11_xfak8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l2jem"]
 light_mode = 1
@@ -40,15 +40,15 @@ fill = 1
 fill_from = Vector2(0.5186916, 0.4906542)
 fill_to = Vector2(0.78504676, 0.18224299)
 
-[node name="enemy_basic" type="CharacterBody2D"]
+[node name="enemy_henry" type="CharacterBody2D"]
 light_mask = 2
 visibility_layer = 2
 material = SubResource("CanvasItemMaterial_l2jem")
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_2hcwk")
+script = ExtResource("1_fv1f4")
 health = 10.0
-speed = 30.0
+speed = 100.0
 damage = 1.0
 attention_time = 5.0
 attack_distance = 90.0
@@ -58,7 +58,7 @@ weight = 1.0
 knockback = 1.0
 
 [node name="vision_comp" type="Node2D" parent="." node_paths=PackedStringArray("body")]
-script = ExtResource("11_l2jem")
+script = ExtResource("2_rn6of")
 body = NodePath("..")
 
 [node name="Timer" type="Timer" parent="vision_comp"]
@@ -66,10 +66,10 @@ body = NodePath("..")
 [node name="RayCast2D" type="RayCast2D" parent="vision_comp"]
 target_position = Vector2(500, 0)
 collision_mask = 4
-script = ExtResource("12_aua4t")
+script = ExtResource("3_n4ci6")
 
 [node name="health_comp" type="Node2D" parent="." node_paths=PackedStringArray("body")]
-script = ExtResource("1_2eiu5")
+script = ExtResource("4_ek5xj")
 health = 10.0
 body = NodePath("..")
 metadata/_custom_type_script = "uid://d1mxg72ybcndy"
@@ -86,7 +86,7 @@ text = "Health: 10"
 one_shot = true
 
 [node name="movement_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "dir_comp", "state_comp", "sprite")]
-script = ExtResource("1_20uc5")
+script = ExtResource("5_2vqm7")
 body = NodePath("..")
 dir_comp = NodePath("../navigation_comp")
 state_comp = NodePath("../state_comp")
@@ -94,14 +94,14 @@ sprite = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://7x44mbgb040j"
 
 [node name="state_comp" type="Node2D" parent="." node_paths=PackedStringArray("vision_comp", "body", "direction_comp")]
-script = ExtResource("6_pfill")
+script = ExtResource("6_chmkc")
 vision_comp = NodePath("../vision_comp")
 body = NodePath("..")
 direction_comp = NodePath("../navigation_comp")
 
 [node name="AttackComp" type="Area2D" parent="." node_paths=PackedStringArray("state_comp", "sprite", "body")]
 collision_layer = 2
-script = ExtResource("2_ou7e2")
+script = ExtResource("7_2ou8l")
 state_comp = NodePath("../state_comp")
 sprite = NodePath("../AnimatedSprite2D")
 body = NodePath("..")
@@ -116,11 +116,11 @@ light_mask = 2
 visibility_layer = 2
 material = SubResource("CanvasItemMaterial_aua4t")
 scale = Vector2(4.4665346, 4.4665346)
-sprite_frames = ExtResource("8_136gi")
+sprite_frames = ExtResource("8_fv1f4")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.38434702
-script = ExtResource("3_xixcj")
+frame_progress = 0.5768657
+script = ExtResource("9_r0psj")
 state_comp = NodePath("../state_comp")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
@@ -132,7 +132,7 @@ shape = SubResource("CircleShape2D_fvy52")
 [node name="navigation_comp" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("body", "attack_comp")]
 avoidance_enabled = true
 radius = 100.0
-script = ExtResource("6_fvy52")
+script = ExtResource("10_a8ors")
 body = NodePath("..")
 attack_distance = 110.0
 attack_comp = NodePath("../AttackComp")
@@ -141,7 +141,7 @@ attack_comp = NodePath("../AttackComp")
 
 [node name="hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp", "body", "state_comp")]
 collision_layer = 2
-script = ExtResource("7_pfill")
+script = ExtResource("11_xfak8")
 health_comp = NodePath("../health_comp")
 body = NodePath("..")
 state_comp = NodePath("../state_comp")

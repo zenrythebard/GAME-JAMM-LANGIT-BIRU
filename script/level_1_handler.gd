@@ -8,7 +8,6 @@ func _ready() -> void:
 	canvas_modulate.visible = true
 	DialogueManager.show_dialogue_balloon_scene(BALLOON, TUTORIAL)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("exit_game"):
+		get_tree().change_scene_to_file("res://main_menu.tscn")

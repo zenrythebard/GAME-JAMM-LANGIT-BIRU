@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://400m2ad7p71t"]
+
+[ext_resource type="Script" uid="uid://bfhesxk8wqbat" path="res://script/credits.gd" id="1_pjc1l"]
+[ext_resource type="Texture2D" uid="uid://csh4ob4m5gbji" path="res://assets/eXTRAS.png" id="2_pjc1l"]
+[ext_resource type="FontFile" uid="uid://jnku4en14uys" path="res://fonts/Caliste.ttf" id="3_4av4j"]
+[ext_resource type="Script" uid="uid://dabuet7gk6lwi" path="res://script/button.gd" id="4_5em78"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pjc1l")
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+position = Vector2(642.3334, 359)
+scale = Vector2(0.67222226, 0.67222226)
+texture = ExtResource("2_pjc1l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 545.0
+offset_right = 211.0
+offset_bottom = 585.0
+theme_override_constants/separation = 35
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_focus_color = Color(0.92588055, 0.82120067, 0.47429806, 1)
+theme_override_fonts/font = ExtResource("3_4av4j")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+script = ExtResource("4_5em78")
+
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

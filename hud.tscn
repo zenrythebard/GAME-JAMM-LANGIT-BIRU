@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://unhub30y0v7j"]
+[gd_scene load_steps=8 format=3 uid="uid://unhub30y0v7j"]
 
 [ext_resource type="Texture2D" uid="uid://c0h0yxhikldt4" path="res://assets/ui1.png" id="1_8sq4i"]
 [ext_resource type="Script" uid="uid://c2o0qk1myp5bn" path="res://script/hud.gd" id="1_640wx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cagmi7r2x4r4k" path="res://assets/ui2.png" id="3_a2258"]
 [ext_resource type="Texture2D" uid="uid://q1c1scif0r40" path="res://assets/Constantinerill.png" id="4_1xsix"]
 [ext_resource type="FontFile" uid="uid://jnku4en14uys" path="res://fonts/Caliste.ttf" id="5_a2258"]
+[ext_resource type="Texture2D" uid="uid://dupd62rpjprjt" path="res://assets/UI.png" id="7_rftc2"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -112,3 +113,30 @@ offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("5_a2258")
 theme_override_font_sizes/font_size = 25
 text = "7"
+
+[node name="UiButtons" type="Sprite2D" parent="."]
+position = Vector2(1082, 58)
+scale = Vector2(2, 2)
+texture = ExtResource("7_rftc2")
+
+[node name="UITEXT" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1104.0
+offset_top = 79.0
+offset_right = 1205.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("5_a2258")
+theme_override_font_sizes/font_size = 25
+text = "Attack"
+
+[node name="UITEXT2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1104.0
+offset_top = 16.0
+offset_right = 1205.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("5_a2258")
+theme_override_font_sizes/font_size = 25
+text = "DASH"

@@ -14,7 +14,6 @@ func _physics_process(delta: float) -> void:
 			contact = true
 			return
 		else:
-			print ("hit_wall")
 			contact = false
 	else:
 		contact = false

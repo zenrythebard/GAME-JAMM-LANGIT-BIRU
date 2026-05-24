@@ -57,14 +57,17 @@ shape = SubResource("CapsuleShape2D_ivps1")
 [node name="player_sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp", "player")]
 y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_urp6f")
+position = Vector2(0, -1)
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_b26j0")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.66813534
 script = ExtResource("5_bwjto")
 state_comp = NodePath("../state_comp")
 player = NodePath("..")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player_sprite"]
+volume_db = -0.595
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -1)
