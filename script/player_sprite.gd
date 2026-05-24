@@ -1,21 +1,37 @@
 extends AnimatedSprite2D
 @export var state_comp : StateComp
 var dash_played : bool = false
+@export var player : Player  
+const PLAYER_OLD = preload("uid://qx8v55c1xjg")
+const PLAYER_YOUTH = preload("uid://bbscml3kehwme")
+const PLAYER_KID = preload("uid://rhsfd7nfhsuw")
+const PLAYER_ADULT = preload("uid://madgr7myctku")
 
 func _physics_process(delta: float) -> void:
+	match player.level_age:
+		1:
+			sprite_frames = PLAYER_OLD
+		2:
+			sprite_frames = PLAYER_ADULT
+		3:
+			sprite_frames = PLAYER_YOUTH
+		4:
+			sprite_frames = PLAYER_KID
 	if state_comp.state != "dashing":
 		dash_played = false
 	if state_comp.state.contains("moving"):
 		play("walk")
 		match state_comp.state:
 			"moving_right":
-				flip_h = false
-			"moving_left":
 				flip_h = true
+			"moving_left":
+				flip_h = false
 	if state_comp.state == "idle":
 		play("idle")
 	if state_comp.state == "attacking":
 		play("attack")
+	if state_comp.state == "attacking_down":
+		play("attack_down")
 	if state_comp.state == "dashing" and dash_played == false:
 		dash_played = true
 		play("dash")

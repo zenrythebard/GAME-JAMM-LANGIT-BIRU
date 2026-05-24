@@ -54,14 +54,16 @@ metadata/_custom_type_script = "uid://b47yvlo7mnsj"
 position = Vector2(3, -1)
 shape = SubResource("CapsuleShape2D_ivps1")
 
-[node name="player_sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp")]
+[node name="player_sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp", "player")]
 material = SubResource("CanvasItemMaterial_urp6f")
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_b26j0")
-animation = &"attack"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.52101296
 script = ExtResource("5_bwjto")
 state_comp = NodePath("../state_comp")
+player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -1)
