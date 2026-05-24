@@ -20,6 +20,9 @@ func _physics_process(delta: float) -> void:
 	direction = dir_comp.direction
 	if state_comp.state == "attacking":
 		return
+	if state_comp.state == "attacking_down":
+		await get_tree().create_timer(0.2).timeout
+		return
 	if direction:
 		body.velocity = direction * speed
 		body.move_and_slide()

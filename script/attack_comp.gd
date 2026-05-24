@@ -23,9 +23,9 @@ func _physics_process(delta: float) -> void:
 			rotation_degrees = 90
 		"moving_up":
 			rotation_degrees = -45
-	if state_comp.state == "attacking":
+	if state_comp.state.contains("attacking"):
 		damage = body.damage
-		if  sprite.animation == "attack" and 3 <= sprite.frame and sprite.frame <= 4:
+		if sprite.animation.contains("attack") and 3 <= sprite.frame and sprite.frame <= 4:
 			attacking = true
 			await sprite.animation_finished
 			state_comp.state = ""
