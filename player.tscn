@@ -20,8 +20,8 @@ height = 58.0
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_urp6f"]
 light_mode = 1
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
-radius = 29.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
+radius = 8.312343
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bwjto"]
 light_mode = 1
@@ -55,6 +55,7 @@ position = Vector2(3, -1)
 shape = SubResource("CapsuleShape2D_ivps1")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp", "player")]
+y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_urp6f")
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_b26j0")
@@ -67,7 +68,8 @@ player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -1)
-shape = SubResource("CircleShape2D_0e48y")
+scale = Vector2(3.01, 3.01)
+shape = SubResource("CapsuleShape2D_b26j0")
 
 [node name="InputComp" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("attack_comp", "sprite")]
 script = ExtResource("7_u1c27")
