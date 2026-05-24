@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 		if state_comp.state != "dashing":
 			if dir_comp.dashing:
 				state_comp.state = "dashing"
+				dash_speed = body.dash_speed
 				speed += dash_speed
 				await get_tree().create_timer(0.6).timeout
 				correct_speed()

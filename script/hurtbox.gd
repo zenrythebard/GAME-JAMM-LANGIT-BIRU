@@ -12,7 +12,6 @@ var vel : Vector2
 
 func _physics_process(delta: float) -> void:
 	body.move_and_collide(attack_velocity)
-	print(attack_velocity)
 	attack_velocity = attack_velocity.move_toward(Vector2.ZERO, 0.1)
 	if current_hitbox == null:
 		return
