@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmv5rqf0di7c2"]
+
+[ext_resource type="Script" uid="uid://gnikx8mvtniu" path="res://script/loading.gd" id="1_gov4d"]
+[ext_resource type="Texture2D" uid="uid://dovey6dbf7thd" path="res://assets/MainMenu.png" id="2_pg7vo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gov4d")
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+position = Vector2(642.3334, 359)
+scale = Vector2(0.67222226, 0.67222226)
+texture = ExtResource("2_pg7vo")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1207.0
+offset_top = 640.0
+offset_right = 1211.0
+offset_bottom = 667.0

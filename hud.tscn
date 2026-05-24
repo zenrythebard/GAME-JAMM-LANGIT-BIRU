@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://unhub30y0v7j"]
+[gd_scene load_steps=7 format=3 uid="uid://unhub30y0v7j"]
 
 [ext_resource type="Texture2D" uid="uid://c0h0yxhikldt4" path="res://assets/ui1.png" id="1_8sq4i"]
 [ext_resource type="Script" uid="uid://c2o0qk1myp5bn" path="res://script/hud.gd" id="1_640wx"]
 [ext_resource type="Texture2D" uid="uid://bpw8c2rma7wl7" path="res://assets/Constantine1.png" id="2_640wx"]
 [ext_resource type="Texture2D" uid="uid://cagmi7r2x4r4k" path="res://assets/ui2.png" id="3_a2258"]
+[ext_resource type="Texture2D" uid="uid://q1c1scif0r40" path="res://assets/Constantinerill.png" id="4_1xsix"]
 [ext_resource type="FontFile" uid="uid://jnku4en14uys" path="res://fonts/Caliste.ttf" id="5_a2258"]
 
 [node name="Control" type="Control"]
@@ -21,7 +22,6 @@ scale = Vector2(0.35, 0.35)
 texture = ExtResource("1_8sq4i")
 
 [node name="Constantine1" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(82, 30)
 scale = Vector2(0.31999874, 0.31999874)
 texture = ExtResource("2_640wx")
@@ -32,7 +32,7 @@ region_rect = Rect2(345.1948, 257.18164, 597.0161, 348.99756)
 visible = false
 position = Vector2(70, 35)
 scale = Vector2(0.31999874, 0.31999874)
-texture = ExtResource("2_640wx")
+texture = ExtResource("4_1xsix")
 region_enabled = true
 region_rect = Rect2(1089.5386, 181.07693, 570.97437, 315.69235)
 
@@ -40,14 +40,15 @@ region_rect = Rect2(1089.5386, 181.07693, 570.97437, 315.69235)
 visible = false
 position = Vector2(73, 38)
 scale = Vector2(0.31999874, 0.31999874)
-texture = ExtResource("2_640wx")
+texture = ExtResource("4_1xsix")
 region_enabled = true
 region_rect = Rect2(1977.6464, 175.90005, 391.35413, 297.65347)
 
 [node name="Constantine4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(75, 41)
 scale = Vector2(0.31999874, 0.31999874)
-texture = ExtResource("2_640wx")
+texture = ExtResource("4_1xsix")
 region_enabled = true
 region_rect = Rect2(2920.3, 167.40005, 323.40015, 279.4001)
 

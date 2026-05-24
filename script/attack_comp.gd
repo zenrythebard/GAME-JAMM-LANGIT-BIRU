@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	var attack_frames : float = sprite.sprite_frames.get_frame_count(attack_anim)
 	var attack_dur : float = sprite.sprite_frames.get_animation_speed(attack_anim)
 	attack_speed = attack_frames / attack_dur
-	if state_comp.state == "attacking" or state_comp.state == "attacking_down":
+	if state_comp.state == "attacking":
 		damage = body.damage
 		if sprite.animation.contains("attack") and 3 <= sprite.frame and sprite.frame <= 4:
 			attacking = true
