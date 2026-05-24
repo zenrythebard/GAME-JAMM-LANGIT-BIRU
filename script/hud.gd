@@ -1,5 +1,5 @@
 extends Control
-@onready var player : Player = %Player
+@onready var player : Player = %player
 @onready var constantine_1: Sprite2D = $Constantine1
 @onready var constantine_2: Sprite2D = $Constantine2
 @onready var constantine_3: Sprite2D = $Constantine3
@@ -43,9 +43,10 @@ func soul_check():
 
 func player_check():
 	if player == null:
+		print("null")
 		return
-	health_label.text = str(player.health_comp.health) 
-	health_label_2.text = str(player.health_comp.health) 
-	max_health_label.text = str(player.max_health) 
-	max_health_label_2.text = str(player.max_health) 
-	soul_label.text = str(Global.level_age)
+	health_label.text = str(int(player.health_comp.health))
+	health_label_2.text = str(int(player.health_comp.health))
+	max_health_label.text = str(int(player.max_health))
+	max_health_label_2.text = str(int(player.max_health))
+	soul_label.text = str(int(Global.level_age))

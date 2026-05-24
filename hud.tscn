@@ -52,7 +52,7 @@ region_enabled = true
 region_rect = Rect2(2920.3, 167.40005, 323.40015, 279.4001)
 
 [node name="Ui2" type="Sprite2D" parent="."]
-position = Vector2(596, 369)
+position = Vector2(597, 369)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_a2258")
 
@@ -60,9 +60,9 @@ texture = ExtResource("3_a2258")
 modulate = Color(0.9440926, 1.540184e-06, 0.5764308, 1)
 texture_filter = 6
 layout_mode = 0
-offset_left = 165.0
+offset_left = 148.0
 offset_top = 12.0
-offset_right = 205.0
+offset_right = 188.0
 offset_bottom = 54.0
 theme_override_fonts/font = ExtResource("5_a2258")
 theme_override_font_sizes/font_size = 43
@@ -72,9 +72,9 @@ text = "7"
 modulate = Color(0.9440926, 1.540184e-06, 0.5764308, 1)
 texture_filter = 6
 layout_mode = 0
-offset_left = 199.0
+offset_left = 216.0
 offset_top = 33.0
-offset_right = 239.0
+offset_right = 256.0
 offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("5_a2258")
 text = "/ 7"
@@ -82,9 +82,9 @@ text = "/ 7"
 [node name="HealthLabel" type="Label" parent="."]
 texture_filter = 6
 layout_mode = 0
-offset_left = 163.0
+offset_left = 146.0
 offset_top = 12.0
-offset_right = 203.0
+offset_right = 186.0
 offset_bottom = 54.0
 theme_override_fonts/font = ExtResource("5_a2258")
 theme_override_font_sizes/font_size = 43
@@ -93,9 +93,9 @@ text = "7"
 [node name="MaxHealthLabel" type="Label" parent="."]
 texture_filter = 6
 layout_mode = 0
-offset_left = 197.0
+offset_left = 214.0
 offset_top = 33.0
-offset_right = 237.0
+offset_right = 254.0
 offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("5_a2258")
 text = "/ 7"
