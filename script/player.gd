@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 @export var level_age : int
-
+@onready var timer: Timer = $Timer
 var health : float = 10
 var speed: float
 var damage : float
@@ -80,3 +80,7 @@ func soul_check():
 		level_age = 3
 	if Global.level_age >= 42:
 		level_age = 3
+
+func _on_timer_timeout() -> void:
+	if Global.level_age > 0:
+		Global.level_age -= 1

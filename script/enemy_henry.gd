@@ -6,7 +6,6 @@ const TUTORIAL = preload("uid://d2fycmbqheegn")
 const MEETING_YOUNG_HENRY = preload("uid://bk2trrslb14ld")
 
 func _process(delta: float) -> void:
-	if dialogue_trigger == true:
-		return
-	if vision_comp.sighted == true:
+	if vision_comp.sighted == true and dialogue_trigger != true:
 		DialogueManager.show_dialogue_balloon_scene(BALLOON, MEETING_YOUNG_HENRY)
+		dialogue_trigger = true
