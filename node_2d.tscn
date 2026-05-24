@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://wcnmegsad67h"]
+[gd_scene load_steps=12 format=4 uid="uid://wcnmegsad67h"]
 
 [ext_resource type="Script" uid="uid://dnmpo6dq7hwbj" path="res://script/level_1_handler.gd" id="1_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://uru1ntaxa45x" path="res://energy_drink.tscn" id="1_kdubu"]
+[ext_resource type="PackedScene" uid="uid://unhub30y0v7j" path="res://hud.tscn" id="2_ir8iy"]
 [ext_resource type="Script" uid="uid://cqewfog5wv1ou" path="res://script/camera_2d.gd" id="2_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://dvywg3cnawi81" path="res://player.tscn" id="3_0hol4"]
 [ext_resource type="TileSet" uid="uid://bayueu7p1vkux" path="res://assets/tileset_envi.tres" id="3_d21ai"]
@@ -16,6 +17,10 @@ blend_mode = 3
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_4d7sh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("2_ir8iy")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
