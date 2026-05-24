@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cfeuvsdi3kc2l"]
+[gd_scene load_steps=36 format=3 uid="uid://cfeuvsdi3kc2l"]
 
 [ext_resource type="Script" uid="uid://d1mxg72ybcndy" path="res://script/health_comp.gd" id="1_2eiu5"]
 [ext_resource type="Script" uid="uid://cm45f2frggde4" path="res://script/enemy_basic.gd" id="1_2hcwk"]
@@ -13,8 +13,17 @@
 [ext_resource type="Script" uid="uid://c7qjurdgudwn5" path="res://vision_comp.gd" id="11_l2jem"]
 [ext_resource type="Script" uid="uid://bgse0qrba1kwm" path="res://enemy_raycast.gd" id="12_aua4t"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l2jem"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iygpt"]
+light_mode = 1
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_l2jem"]
 radius = 17.667454
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aua4t"]
+light_mode = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5w6q"]
 atlas = ExtResource("3_136gi")
@@ -130,10 +139,23 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fvy52"]
 radius = 35.014282
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pfill"]
-radius = 37.01351
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l2jem"]
+radius = 22.0
+height = 68.0
+
+[sub_resource type="Gradient" id="Gradient_ivps1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l2jem"]
+gradient = SubResource("Gradient_ivps1")
+fill = 1
+fill_from = Vector2(0.5186916, 0.4906542)
+fill_to = Vector2(0.78504676, 0.18224299)
 
 [node name="enemy_basic" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_l2jem")
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_2hcwk")
@@ -165,11 +187,15 @@ body = NodePath("..")
 metadata/_custom_type_script = "uid://d1mxg72ybcndy"
 
 [node name="Label" type="Label" parent="health_comp"]
+material = SubResource("CanvasItemMaterial_iygpt")
 offset_left = -38.0
 offset_top = -73.0
 offset_right = 41.0
 offset_bottom = -50.0
 text = "Health: 10"
+
+[node name="Timer" type="Timer" parent="health_comp"]
+one_shot = true
 
 [node name="movement_comp" type="Node2D" parent="." node_paths=PackedStringArray("body", "dir_comp", "state_comp", "sprite")]
 script = ExtResource("1_20uc5")
@@ -198,6 +224,9 @@ scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_l2jem")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp")]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_aua4t")
 scale = Vector2(4.4665346, 4.4665346)
 sprite_frames = SubResource("SpriteFrames_h5w6q")
 animation = &"attack"
@@ -226,7 +255,16 @@ body = NodePath("..")
 state_comp = NodePath("../state_comp")
 
 [node name="hurtbox_shape" type="CollisionShape2D" parent="hurtbox"]
-shape = SubResource("CircleShape2D_pfill")
+shape = SubResource("CapsuleShape2D_l2jem")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(5, 1)
+scale = Vector2(18.50312, 15.370526)
+blend_mode = 2
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_l2jem")
 
 [connection signal="area_entered" from="hurtbox" to="hurtbox" method="_on_area_entered"]
 [connection signal="area_exited" from="hurtbox" to="hurtbox" method="_on_area_exited"]

@@ -7,8 +7,13 @@ var is_hit : bool = false
 var current_item : ItemPickup = null
 @export var body : CharacterBody2D
 @export var state_comp : StateComp
+var attack_velocity : Vector2
+var vel : Vector2
 
 func _physics_process(delta: float) -> void:
+	body.move_and_collide(attack_velocity)
+	print(attack_velocity)
+	attack_velocity = attack_velocity.move_toward(Vector2.ZERO, 0.1)
 	if current_hitbox == null:
 		return
 	if is_hit == true:
@@ -17,11 +22,13 @@ func _physics_process(delta: float) -> void:
 		if state_comp.state == "dashing":
 			print("dodge")
 			return
-		health_comp.health -= current_hitbox.damage
 		knockback()
+		health_comp.health -= current_hitbox.damage
+		health_comp.health_change = true
 		is_hit = true
 		await get_tree().create_timer(current_hitbox.attack_speed).timeout
 		is_hit = false
+		health_comp.health_change = false
 		return
 
 func _on_area_entered(area: Area2D) -> void:
@@ -39,7 +46,5 @@ func _on_area_exited(area: Area2D) -> void:
 		current_item = null
 		
 func knockback():
-	print("knock") 
 	var knock_dir : Vector2 = -(current_hitbox.body.position - body.position).normalized()
-	body.velocity = knock_dir * 5000 * current_hitbox.body.knockback / body.weight 
-	body.move_and_slide()
+	attack_velocity = knock_dir * 5 * current_hitbox.body.knockback / body.weight 

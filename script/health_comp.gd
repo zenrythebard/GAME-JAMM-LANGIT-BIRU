@@ -2,8 +2,11 @@ class_name HealthComp extends Node2D
 @export var health : float
 @export var body : CharacterBody2D
 @onready var label: Label = $Label
+@onready var timer: Timer = $Timer
+var health_change : bool = false
 
 func _ready() -> void:
+	label.visible = false
 	health = body.health
 
 func _process(delta: float) -> void:
@@ -12,5 +15,11 @@ func _process(delta: float) -> void:
 		Global.level_age += body.soul_level
 		print(Global.level_age)
 		body.queue_free()
+	
+	if health_change == false: 
+		label.visible = false
+	else:
+		label.visible = true
+		
 	
 	
