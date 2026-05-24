@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://unhub30y0v7j"]
+
+[ext_resource type="Texture2D" uid="uid://c0h0yxhikldt4" path="res://assets/ui1.png" id="1_8sq4i"]
+[ext_resource type="Script" uid="uid://c2o0qk1myp5bn" path="res://script/hud.gd" id="1_640wx"]
+[ext_resource type="Texture2D" uid="uid://bpw8c2rma7wl7" path="res://assets/Constantine1.png" id="2_640wx"]
+[ext_resource type="Texture2D" uid="uid://cagmi7r2x4r4k" path="res://assets/ui2.png" id="3_a2258"]
+[ext_resource type="FontFile" uid="uid://jnku4en14uys" path="res://fonts/Caliste.ttf" id="5_a2258"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_640wx")
+
+[node name="Ui1" type="Sprite2D" parent="."]
+position = Vector2(671, 376.99997)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_8sq4i")
+
+[node name="Constantine1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(82, 30)
+scale = Vector2(0.31999874, 0.31999874)
+texture = ExtResource("2_640wx")
+region_enabled = true
+region_rect = Rect2(345.1948, 257.18164, 597.0161, 348.99756)
+
+[node name="Constantine2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(70, 35)
+scale = Vector2(0.31999874, 0.31999874)
+texture = ExtResource("2_640wx")
+region_enabled = true
+region_rect = Rect2(1089.5386, 181.07693, 570.97437, 315.69235)
+
+[node name="Constantine3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(73, 38)
+scale = Vector2(0.31999874, 0.31999874)
+texture = ExtResource("2_640wx")
+region_enabled = true
+region_rect = Rect2(1977.6464, 175.90005, 391.35413, 297.65347)
+
+[node name="Constantine4" type="Sprite2D" parent="."]
+position = Vector2(75, 41)
+scale = Vector2(0.31999874, 0.31999874)
+texture = ExtResource("2_640wx")
+region_enabled = true
+region_rect = Rect2(2920.3, 167.40005, 323.40015, 279.4001)
+
+[node name="Ui2" type="Sprite2D" parent="."]
+position = Vector2(596, 369)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_a2258")
+
+[node name="HealthLabel2" type="Label" parent="."]
+modulate = Color(0.9440926, 1.540184e-06, 0.5764308, 1)
+texture_filter = 6
+layout_mode = 0
+offset_left = 165.0
+offset_top = 12.0
+offset_right = 205.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("5_a2258")
+theme_override_font_sizes/font_size = 43
+text = "7"
+
+[node name="MaxHealthLabel2" type="Label" parent="."]
+modulate = Color(0.9440926, 1.540184e-06, 0.5764308, 1)
+texture_filter = 6
+layout_mode = 0
+offset_left = 199.0
+offset_top = 33.0
+offset_right = 239.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("5_a2258")
+text = "/ 7"
+
+[node name="HealthLabel" type="Label" parent="."]
+texture_filter = 6
+layout_mode = 0
+offset_left = 163.0
+offset_top = 12.0
+offset_right = 203.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("5_a2258")
+theme_override_font_sizes/font_size = 43
+text = "7"
+
+[node name="MaxHealthLabel" type="Label" parent="."]
+texture_filter = 6
+layout_mode = 0
+offset_left = 197.0
+offset_top = 33.0
+offset_right = 237.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("5_a2258")
+text = "/ 7"
+
+[node name="SoulLabel" type="Label" parent="."]
+modulate = Color(1, 1, 0.7019608, 1)
+texture_filter = 6
+layout_mode = 0
+offset_left = 152.0
+offset_top = 55.0
+offset_right = 192.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("5_a2258")
+theme_override_font_sizes/font_size = 25
+text = "7"

@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 	if direction_comp.attacking == true :
 		if  direction_comp.direction.y > 0:
 			state = "attacking_down"
+			return
 		else :
 			state = "attacking"
 		return

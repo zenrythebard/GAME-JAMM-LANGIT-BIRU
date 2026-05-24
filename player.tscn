@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clxahla1koxtm" path="res://script/player.gd" id="1_n7ghd"]
 [ext_resource type="Script" uid="uid://b47yvlo7mnsj" path="res://script/hurtbox.gd" id="2_ivps1"]
-[ext_resource type="SpriteFrames" uid="uid://madgr7myctku" path="res://sprite_animations/player_adult.tres" id="3_b26j0"]
+[ext_resource type="SpriteFrames" uid="uid://bbscml3kehwme" path="res://sprite_animations/player_youth.tres" id="3_b26j0"]
 [ext_resource type="Script" uid="uid://xkcqg7jrkwbg" path="res://script/player_sprite.gd" id="5_bwjto"]
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="6_606se"]
 [ext_resource type="Script" uid="uid://s6xidfl4aow1" path="res://script/input_comp.gd" id="7_u1c27"]
@@ -59,9 +59,9 @@ y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_urp6f")
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_b26j0")
-animation = &"dash"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.25173104
+frame_progress = 0.6626079
 script = ExtResource("5_bwjto")
 state_comp = NodePath("../state_comp")
 player = NodePath("..")
