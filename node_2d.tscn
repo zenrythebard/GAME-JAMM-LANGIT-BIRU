@@ -67,7 +67,7 @@ tile_set = ExtResource("3_d21ai")
 [node name="player" parent="Environment/ObjectTile" instance=ExtResource("3_0hol4")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(431, -1171.75)
+position = Vector2(90.5, 1.25)
 scale = Vector2(0.25, 0.25)
 level_age = 1
 start_direction = 2
@@ -86,6 +86,160 @@ position = Vector2(1723, -7001)
 player = NodePath("../../Environment/ObjectTile/player")
 start_point = NodePath("../enemy_henry_patrol_path/start")
 end_point = NodePath("../enemy_henry_patrol_path/end")
+
+[node name="enemy36" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(198, -4693)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy35" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(2994, -5511)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy34" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(3772, -5233)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy33" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(6017, -3188)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy32" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(5652, -3188)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy31" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(5658, -3947)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy30" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(5272, -3327)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy29" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(5272, -3820)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy28" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(4509, -3314)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy27" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(4903, -3817)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy26" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(4897, -3324)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy25" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(4511, -3822)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy24" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(4131, -3201)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy23" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
+z_index = 2
+position = Vector2(4137, -3850)
+collision_mask = 12
+health = 5.0
+speed = 100.0
+weight = 1.1
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy1_patrol_path/start")
+end_point = NodePath("../enemy1_patrol_path/end")
 
 [node name="enemy22" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
 z_index = 2
@@ -337,6 +491,118 @@ position = Vector2(150, -1457)
 
 [node name="end" type="Node2D" parent="Mobs/enemy_henry_patrol_path"]
 position = Vector2(137, -726)
+
+[node name="enemy36_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy36_patrol_path"]
+position = Vector2(206, -4679)
+
+[node name="end" type="Node2D" parent="Mobs/enemy36_patrol_path"]
+position = Vector2(1541, -4660)
+
+[node name="enemy35_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy35_patrol_path"]
+position = Vector2(2878, -5514)
+
+[node name="end" type="Node2D" parent="Mobs/enemy35_patrol_path"]
+position = Vector2(3123, -5509)
+
+[node name="enemy34_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy34_patrol_path"]
+position = Vector2(3768, -5231)
+
+[node name="end" type="Node2D" parent="Mobs/enemy34_patrol_path"]
+position = Vector2(3783, -4682)
+
+[node name="enemy33_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy33_patrol_path"]
+position = Vector2(6030, -3182)
+
+[node name="end" type="Node2D" parent="Mobs/enemy33_patrol_path"]
+position = Vector2(6028, -4676)
+
+[node name="enemy32_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy32_patrol_path"]
+position = Vector2(5654, -3185)
+
+[node name="end" type="Node2D" parent="Mobs/enemy32_patrol_path"]
+position = Vector2(5652, -3457)
+
+[node name="enemy31_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy31_patrol_path"]
+position = Vector2(5663, -3936)
+
+[node name="end" type="Node2D" parent="Mobs/enemy31_patrol_path"]
+position = Vector2(5546, -3668)
+
+[node name="enemy30_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy30_patrol_path"]
+position = Vector2(5273, -3314)
+
+[node name="end" type="Node2D" parent="Mobs/enemy30_patrol_path"]
+position = Vector2(5461, -3592)
+
+[node name="enemy29_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy29_patrol_path"]
+position = Vector2(5276, -3820)
+
+[node name="end" type="Node2D" parent="Mobs/enemy29_patrol_path"]
+position = Vector2(5097, -3631)
+
+[node name="enemy28_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy28_patrol_path"]
+position = Vector2(4836, -3432)
+
+[node name="end" type="Node2D" parent="Mobs/enemy28_patrol_path"]
+position = Vector2(4958, -3261)
+
+[node name="enemy27_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy27_patrol_path"]
+position = Vector2(4899, -3813)
+
+[node name="end" type="Node2D" parent="Mobs/enemy27_patrol_path"]
+position = Vector2(4905, -3751)
+
+[node name="enemy26_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy26_patrol_path"]
+position = Vector2(4502, -3309)
+
+[node name="end" type="Node2D" parent="Mobs/enemy26_patrol_path"]
+position = Vector2(4699, -3586)
+
+[node name="enemy25_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy25_patrol_path"]
+position = Vector2(4520, -3822)
+
+[node name="end" type="Node2D" parent="Mobs/enemy25_patrol_path"]
+position = Vector2(4368, -3627)
+
+[node name="enemy24_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy24_patrol_path"]
+position = Vector2(4144, -3197)
+
+[node name="end" type="Node2D" parent="Mobs/enemy24_patrol_path"]
+position = Vector2(4145, -3339)
+
+[node name="enemy23_patrol_path" type="Node2D" parent="Mobs"]
+
+[node name="start" type="Node2D" parent="Mobs/enemy23_patrol_path"]
+position = Vector2(4134, -3846)
+
+[node name="end" type="Node2D" parent="Mobs/enemy23_patrol_path"]
+position = Vector2(4140, -3749)
 
 [node name="enemy22_patrol_path" type="Node2D" parent="Mobs"]
 
