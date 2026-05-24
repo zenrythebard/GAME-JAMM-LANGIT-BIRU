@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://wcnmegsad67h"]
 
-[ext_resource type="PackedScene" path="res://energy_drink.tscn" id="1_kdubu"]
+[ext_resource type="PackedScene" uid="uid://k40kmbn4ggjc" path="res://energy_drink.tscn" id="1_kdubu"]
 [ext_resource type="Script" uid="uid://cqewfog5wv1ou" path="res://script/camera_2d.gd" id="2_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://dvywg3cnawi81" path="res://player.tscn" id="3_0hol4"]
 [ext_resource type="TileSet" uid="uid://bayueu7p1vkux" path="res://assets/tileset_envi.tres" id="3_d21ai"]
