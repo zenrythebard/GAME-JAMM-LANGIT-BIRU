@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://ck6qnrnuu1tro"]
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://r0277gm4g1nk"]
 
 [ext_resource type="Texture2D" uid="uid://dnupm3rrm5g83" path="res://assets/anim_henry/Henry_Attack.png" id="1_1vx6e"]
 [ext_resource type="Texture2D" uid="uid://ba5cdyihx3um6" path="res://assets/anim_henry/Henry_Walk.png" id="2_e4x75"]

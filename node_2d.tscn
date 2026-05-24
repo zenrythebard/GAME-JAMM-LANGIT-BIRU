@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://wcnmegsad67h"]
+[gd_scene load_steps=13 format=4 uid="uid://wcnmegsad67h"]
 
 [ext_resource type="Script" uid="uid://dnmpo6dq7hwbj" path="res://script/level_1_handler.gd" id="1_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://uru1ntaxa45x" path="res://energy_drink.tscn" id="1_kdubu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://byq76hg3jk30b" path="res://script/background_tile.gd" id="5_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://cwsm5kembsutq" path="res://assets/dialoguebox.png" id="6_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://cuo6b2tpumlle" path="res://assets/gambaranruangan besar.png" id="7_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://db1vhu8flwp4q" path="res://enemy_henry.tscn" id="8_hqns4"]
 [ext_resource type="PackedScene" uid="uid://cfeuvsdi3kc2l" path="res://enemy_basic.tscn" id="12_x0ka3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ir8iy"]
@@ -66,7 +67,7 @@ tile_set = ExtResource("3_d21ai")
 [node name="player" parent="Environment/ObjectTile" instance=ExtResource("3_0hol4")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(94, -6.75)
+position = Vector2(431, -1171.75)
 scale = Vector2(0.25, 0.25)
 level_age = 1
 start_direction = 2
@@ -79,6 +80,12 @@ scale = Vector2(0.115, 0.115)
 texture = ExtResource("6_4d7sh")
 
 [node name="Mobs" type="Node" parent="."]
+
+[node name="enemy_henry" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("8_hqns4")]
+position = Vector2(1723, -7001)
+player = NodePath("../../Environment/ObjectTile/player")
+start_point = NodePath("../enemy_henry_patrol_path/start")
+end_point = NodePath("../enemy_henry_patrol_path/end")
 
 [node name="enemy22" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("12_x0ka3")]
 z_index = 2
@@ -321,6 +328,15 @@ weight = 1.1
 player = NodePath("../../Environment/ObjectTile/player")
 start_point = NodePath("../enemy1_patrol_path/start")
 end_point = NodePath("../enemy1_patrol_path/end")
+
+[node name="enemy_henry_patrol_path" type="Node2D" parent="Mobs"]
+position = Vector2(1573, -5542)
+
+[node name="start" type="Node2D" parent="Mobs/enemy_henry_patrol_path"]
+position = Vector2(150, -1457)
+
+[node name="end" type="Node2D" parent="Mobs/enemy_henry_patrol_path"]
+position = Vector2(137, -726)
 
 [node name="enemy22_patrol_path" type="Node2D" parent="Mobs"]
 

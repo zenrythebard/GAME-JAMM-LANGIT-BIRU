@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://nw4fnv51mhg6"]
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://b30gptxkiwxhe"]
 
 [ext_resource type="Texture2D" uid="uid://b25umjvhqmqyx" path="res://assets/anim_rando/RandomOldGuy_Attack.png" id="1_k0uox"]
 [ext_resource type="Texture2D" uid="uid://ki83pc8ep260" path="res://assets/anim_rando/RandomOldGuy_Walk.png" id="2_jpb8s"]

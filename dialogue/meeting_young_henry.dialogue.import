@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bk2trrslb14ld"
+path="res://.godot/imported/meeting_young_henry.dialogue-34b50607c0a0c5777da4d8f5f647c9ab.tres"
+
+[deps]
+
+source_file="res://dialogue/meeting_young_henry.dialogue"
+dest_files=["res://.godot/imported/meeting_young_henry.dialogue-34b50607c0a0c5777da4d8f5f647c9ab.tres"]
+
+[params]
+
+defaults=true

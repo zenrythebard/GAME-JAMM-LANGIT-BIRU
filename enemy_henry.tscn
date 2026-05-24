@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://7x44mbgb040j" path="res://script/movement_comp.gd" id="5_2vqm7"]
 [ext_resource type="Script" uid="uid://bvoco4eusomqu" path="res://script/enemy_state_comp.gd" id="6_chmkc"]
 [ext_resource type="Script" uid="uid://bq7bxbjt82ohu" path="res://script/attack_comp.gd" id="7_2ou8l"]
-[ext_resource type="SpriteFrames" uid="uid://ck6qnrnuu1tro" path="res://sprite_animations/enemy_henry.tres" id="8_fv1f4"]
+[ext_resource type="SpriteFrames" uid="uid://r0277gm4g1nk" path="res://sprite_animations/enemy_henry.tres" id="8_fv1f4"]
 [ext_resource type="Script" uid="uid://db7rh7bg3y0im" path="res://script/enemy_basic_sprite.gd" id="9_r0psj"]
 [ext_resource type="Script" uid="uid://njugueidf0ly" path="res://script/navigation_comp.gd" id="10_a8ors"]
 [ext_resource type="Script" uid="uid://b47yvlo7mnsj" path="res://script/hurtbox.gd" id="11_xfak8"]
