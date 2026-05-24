@@ -12,6 +12,10 @@ func _physics_process(delta: float) -> void:
 	if is_colliding():
 		if get_collider() is Player:
 			contact = true
+			return
+		else:
+			print ("hit_wall")
+			contact = false
 	else:
 		contact = false
 

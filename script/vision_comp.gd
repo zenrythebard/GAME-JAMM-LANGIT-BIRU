@@ -5,3 +5,4 @@ var attention_time : float
 
 func _ready() -> void:
 	attention_time = body.attention_time
+	
