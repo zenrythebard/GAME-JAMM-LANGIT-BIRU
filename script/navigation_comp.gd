@@ -8,6 +8,7 @@ var nav_point_direction : Vector2
 var chase : bool 
 @export var attack_distance : float
 @export var attack_comp : AttackComp
+@onready var timer: Timer = $Timer
 
 func _ready() -> void:
 	player = body.player
@@ -15,6 +16,8 @@ func _ready() -> void:
 	end_point = body.end_point
 	goal = start_point
 	target_position = goal.global_position
+	attacking = false
+	attack_distance = body.attack_distance
 	
 func _physics_process(delta: float) -> void:
 	if player == null:
@@ -52,7 +55,6 @@ func player_checker():
 	var player_distance : float = player.position.distance_to(body.position)
 	if player_distance < attack_distance:
 		attacking = true
-		await get_tree().create_timer(attack_comp.attack_speed).timeout
-		attacking = false
-	else:
+		timer.start(attack_comp.attack_speed)
+		await timer.timeout
 		attacking = false

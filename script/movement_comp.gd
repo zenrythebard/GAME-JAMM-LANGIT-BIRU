@@ -17,9 +17,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	direction = dir_comp.direction
+	if state_comp.state == "attacking":
+		return
 	if direction:
 		body.velocity = direction * speed
-		body.move_and_collide(body.velocity * delta)
 		body.move_and_slide()
 		if state_comp.state != "dashing":
 			if dir_comp.dashing:

@@ -126,12 +126,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bjha6")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_gt76g")
 }],
 "loop": true,
 "name": &"attack",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -145,7 +145,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dash",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -201,16 +201,21 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 12
 script = ExtResource("1_n7ghd")
 health = 10.0
 speed = 100.0
 damage = 1.0
 dash_speed = 200.0
+weight = 1.0
+knockback = 1.0
 
-[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp", "state_comp")]
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_comp", "body", "state_comp")]
 collision_mask = 2
 script = ExtResource("2_ivps1")
 health_comp = NodePath("../health_comp")
+body = NodePath("..")
 state_comp = NodePath("../state_comp")
 metadata/_custom_type_script = "uid://b47yvlo7mnsj"
 
@@ -221,7 +226,7 @@ shape = SubResource("CircleShape2D_0e48y")
 [node name="player_sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("state_comp")]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_0h7mo")
-animation = &"dash"
+animation = &"attack"
 autoplay = "idle"
 script = ExtResource("5_bwjto")
 state_comp = NodePath("../state_comp")

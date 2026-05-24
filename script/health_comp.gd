@@ -9,6 +9,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	label.text = "Health: " + str(health)
 	if health == 0:
+		Global.level_age += body.soul_level
+		print(Global.level_age)
 		body.queue_free()
 	
 	
