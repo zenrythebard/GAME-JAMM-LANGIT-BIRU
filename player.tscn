@@ -106,9 +106,9 @@ metadata/_custom_type_script = "uid://d1mxg72ybcndy"
 [node name="Label" type="Label" parent="health_comp"]
 material = SubResource("CanvasItemMaterial_bwjto")
 offset_left = -38.0
-offset_top = -73.0
+offset_top = -111.0
 offset_right = 41.0
-offset_bottom = -50.0
+offset_bottom = -88.0
 text = "Health: 10"
 
 [node name="Timer" type="Timer" parent="health_comp"]

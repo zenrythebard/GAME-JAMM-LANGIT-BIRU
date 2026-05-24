@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 			state = "moving_right"
 			return
 		if direction_comp.direction.x < 0:
-			state = "moving_left"	
+			state = "moving_left"
 			return
 		if direction_comp.direction.y < 0:
 			state = "moving_up"
