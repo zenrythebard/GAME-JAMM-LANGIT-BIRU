@@ -79,7 +79,7 @@ func soul_check():
 	if Global.level_age >= 35:
 		level_age = 3
 	if Global.level_age >= 42:
-		level_age = 3
+		level_age = 4
 
 func _on_timer_timeout() -> void:
 	if Global.level_age > 0:

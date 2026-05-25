@@ -5,6 +5,7 @@ const TUTORIAL = preload("uid://d2fycmbqheegn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.level_age = 0
 	canvas_modulate.visible = true
 	DialogueManager.show_dialogue_balloon_scene(BALLOON, TUTORIAL)
 
