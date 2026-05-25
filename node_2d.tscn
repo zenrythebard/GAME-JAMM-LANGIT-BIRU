@@ -83,7 +83,7 @@ texture = ExtResource("6_4d7sh")
 
 [node name="enemy_henry" parent="Mobs" node_paths=PackedStringArray("player", "start_point", "end_point") instance=ExtResource("8_hqns4")]
 position = Vector2(1723, -7001)
-health = 200.0
+health = 50.0
 attention_time = 10.0
 weight = 3.0
 knockback = 2.0
