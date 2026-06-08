@@ -74,11 +74,11 @@ func _physics_process(delta: float) -> void:
 func soul_check():
 	if Global.level_age >= 0:
 		level_age = 1
-	if Global.level_age >= 12:
+	if Global.level_age >= 6:
 		level_age = 2
-	if Global.level_age >= 35:
+	if Global.level_age >= 32:
 		level_age = 3
-	if Global.level_age >= 42:
+	if Global.level_age >= 60:
 		level_age = 4
 
 func _on_timer_timeout() -> void:

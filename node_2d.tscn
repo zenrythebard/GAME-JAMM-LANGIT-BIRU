@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://wcnmegsad67h"]
+[gd_scene load_steps=12 format=4 uid="uid://wcnmegsad67h"]
 
 [ext_resource type="Script" uid="uid://dnmpo6dq7hwbj" path="res://script/level_1_handler.gd" id="1_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://uru1ntaxa45x" path="res://energy_drink.tscn" id="1_kdubu"]
@@ -8,7 +8,6 @@
 [ext_resource type="TileSet" uid="uid://bayueu7p1vkux" path="res://assets/tileset_envi.tres" id="3_d21ai"]
 [ext_resource type="Script" uid="uid://byq76hg3jk30b" path="res://script/background_tile.gd" id="5_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://cwsm5kembsutq" path="res://assets/dialoguebox.png" id="6_4d7sh"]
-[ext_resource type="Texture2D" uid="uid://cuo6b2tpumlle" path="res://assets/gambaranruangan besar.png" id="7_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://db1vhu8flwp4q" path="res://enemy_henry.tscn" id="8_hqns4"]
 [ext_resource type="PackedScene" uid="uid://cfeuvsdi3kc2l" path="res://enemy_basic.tscn" id="12_x0ka3"]
 
@@ -842,8 +841,3 @@ position = Vector2(2383, -5775)
 
 [node name="energy_drink2" parent="Items" instance=ExtResource("1_kdubu")]
 position = Vector2(-810, -60)
-
-[node name="GambaranruanganBesar" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(3616, -438)
-texture = ExtResource("7_4d7sh")
